@@ -1,0 +1,18 @@
+[
+    {
+        "venueName": "Blantyre",
+        "venueAddressLine1": "Unit 4, Block 6",
+        "venueAddressLine2": "Third Rd",
+        "venueAddressLine3": "Blantyre Industrial Estate",
+        "venueCityTown": "Blantyre",
+        "venuePostcode": "G72 0UP"
+    },
+    {
+        "venueName": "Eddlewood",
+        "venueAddressLine1": "Eddlewood Sports Centre",
+        "venueAddressLine2": "",
+        "venueAddressLine3": "",
+        "venueCityTown": "Hamilton",
+        "venuePostcode": "ML3 7RP"
+    }
+]

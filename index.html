@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ClubRight Email Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+        <form id="emailTemplateForm">
+            <div class="field-wrapper">
+                <label for="email-template">Email template:</label>
+                <select required id="email-template" name="email-template">
+                    <option value="" selected disabled>--Select a template--</option>
+                    <optgroup label="Booking Confirmation Emails">
+                        <option value="test-email">Test Email</option>
+                        <option value="taster">Taster class</option>
+                        <option value="new-member">New member term booking</option>
+                        <option value="auto-enrol">Auto-enrolment (current members)</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="class-filters-wrapper">
+                <h4>Class Details</h4>
+                <div class="field-wrapper booking-confirmation-field">
+                    <label for="class-day">Class day:</label>
+                    <select required id="class-day" name="class-day">
+                        <option value="" selected disabled>--Select the class day--</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                </div>
+                <div class="field-wrapper booking-confirmation-field">
+                    <label for="venue">Class venue:</label>
+                    <select required id="venue" name="venue">
+                        <option value="" selected disabled>--Select a venue--</option>
+                        <option value="Eddlewood">Eddlewood</option>
+                        <option value="Blantyre">Blantyre</option>
+                    </select>
+                </div>
+                <div class="field-wrapper booking-confirmation-field">
+                    <label for="class-type">Class type:</label>
+                    <select required id="class-type" name="class-type">
+                        <option value="" selected disabled>--Select a class type--</option>
+                        <option value="Preschool">Preschool</option>
+                        <option value="Recreational">Rec</option>
+                        <option value="ASN">ASN</option>
+                    </select>
+                </div>
+                <div class="field-wrapper booking-confirmation-field">
+                    <label for="class-booked">Class booked:</label>
+                    <select required id="class-booked" name="class-booked">
+                        <option value="" disabled>--Select a class</option>
+                        <!-- Classes will be populated here -->
+                    </select>
+                </div>
+            </div>
+            <div class="field-wrapper booking-confirmation-field">
+                <label for="term-booked">Term:</label>
+                <select required id="term-booked" name="term-booked">
+                    <option value="" selected disabled>--Select a term--</option>
+                    <!-- Terms will be populated here -->
+                </select>
+            </div>
+            <div class="field-wrapper booking-confirmation-field">
+                <label for="booking-start-date">Start Date:</label>
+                <input type="date" required id="booking-start-date" name="booking-start-date">
+                <span id="startDateError" style="color: red; display: none;">The start date is outside the selected term dates. Please select a valid date.</span>
+            </div>
+            <div class="field-wrapper">
+                <button type="submit">Generate booking confirmation</button>
+            </div>
+        </form>
+            <div id="emailTemplatePreview">
+            <h3>Email Preview</h3>
+            <div id="emailTemplate">
+                <table id="emailHeader" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ff3451; border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto;">
+                    <tr>
+                        <td style="background-color: #ff3451; padding: 0; margin: 0;">
+                            <img src="https://storage.clubright.co.uk/messageimages/cbb27ddf-3039-442b-bfc9-ab0df42fb5e1.png" style="display: block; width: 100%; height: 100px; max-width: 600px" alt="Club Logo">
+                        </td>
+                    </tr>
+                </table>
+                {{emailContent}}
+                <table id="emailFooter" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto;background-color: #ff3451; padding: 0; font-family: Arial, sans-serif;">
+                    <tr>
+                        <td style="padding: 20px; color: #ffffff; font-size: 70%; text-align: center;">
+                            <p>Club info
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>
