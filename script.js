@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    flatpickr("#booking-start-date", {
+        dateFormat: "Y-m-d", // Format: Year-Month-Day
+        defaultDate: "today", // Default to today's date
+        minDate: "today", // Prevent selecting past dates
+        disable: ["2025-01-01"], // Example: Disable specific dates
+        locale: {
+            firstDayOfWeek: 1 // Set Monday as the first day of the week
+        },
+        onChange: function(selectedDates, dateStr, instance) {
+            console.log("Selected Date: ", dateStr); // For debugging
+        }
+    });
+
     const form = document.getElementById('emailTemplateForm');
     const classListContainer = document.getElementById('class-booked');
     const termListContainer = document.getElementById('term-booked');

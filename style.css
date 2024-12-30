@@ -5,39 +5,186 @@
     box-sizing: border-box;
 }
 
-#emailTemplateForm {
+/* Adjusted Form Container */
+.form-container {
     flex: 1;
     max-width: 50%;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ff3451; /* Company color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* General spacing for form fields */
+.field-wrapper {
+    margin-bottom: 20px; /* Adds space between each field */
+}
+
+/* Specific spacing for labels */
+.field-wrapper label {
+    display: block; /* Ensures labels are above the input fields */
+    margin-bottom: 5px; /* Adds space between label and input */
+    font-weight: bold; /* Makes labels stand out */
+}
+
+/* Adjust spacing for the button */
+.field-wrapper button[type="submit"] {
+    margin-top: 20px; /* Adds space above the button */
+    padding: 10px 20px; /* Increases button padding for a larger click area */
+    font-size: 16px; /* Makes button text larger */
+    background-color: #ff3451; /* Matches company colors */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button hover effect for better interactivity */
+.field-wrapper button[type="submit"]:hover {
+    background-color: #d92e44; /* Slightly darker red on hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Class Filters */
+.class-filters-wrapper {
+    display: block;
+    border: 1px solid #d4d4d4; /* Highlight with company color */
+    padding: 15px;
+    margin: 15px 0;
+    margin-left: 0;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+.class-filters-wrapper h4 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+}
+
+.class-filters-wrapper p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 0 10px;
+}
+
+/* Form Fields */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #000;
+}
+
+/* Style the date input field */
+#booking-start-date {
+    font-size: 16px; /* Adjust text size */
+    padding: 8px 12px; /* Add padding for better clickability */
+    border: 1px solid #ff3451; /* Match company colors */
+    border-radius: 5px; /* Smooth corners */
+    width: 100%; /* Make it responsive */
+    box-sizing: border-box; /* Ensure padding doesn't exceed container width */
+    background-color: white;
+    color: black;
+}
+
+/* Change placeholder style */
+#booking-start-date::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* On focus, make the input more prominent */
+#booking-start-date:focus {
+    outline: none;
+    border-color: black; /* Black border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the date input matches the form field size */
+select,input[type="date"] {
+    width: 100%; /* Ensures it fits within its container */
+    max-width: 400px; /* Prevents it from becoming too wide */
+    padding: 8px; /* Matches padding with other form fields */
+    font-size: 1rem; /* Keeps font consistent */
+    border: 1px solid #ccc; /* Default border for consistency */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+select:focus,
+/* Adjust focus styles for better user experience */
+input[type="date"]:focus {
+    border-color: #ff3451;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 52, 81, 0.5);
+}
+
+/* Prevent native picker from appearing too small on some devices */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+    display: none; /* Hides unnecessary UI elements */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(25%) sepia(70%) saturate(250%) hue-rotate(340deg);
+    width: 24px; /* Adjust indicator size */
+    height: 24px;
+}
+
+/* Buttons */
+button[type="submit"] {
+    background-color: #ff3451;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #d02f45;
+}
+
+/* Error Message */
+#startDateError {
+    font-size: 0.9rem;
+    color: #ff3451;
+    margin-top: 5px;
+}
+
+/* Email Preview */
 #emailTemplatePreview {
     flex: 1;
     max-width: 50%;
     padding: 20px;
     box-sizing: border-box;
-    background-color:  #f4f4f4;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #emailTemplate {
-    box-shadow:  0 4px 4px #c4c4c4;
+    box-shadow: 0 4px 4px #c4c4c4;
     max-width: 600px;
+    margin: 0 auto;
 }
 
-.class-filters-wrapper {
-    display: inline-block;
-    border: 1px solid #d5d5d5;
-    padding: 10px;
-    margin: 10px;
-    margin-left: 0;
-}
-
-.class-filters-wrapper h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.winter2025Only {
-    visibility: hidden;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .form-container,
+    #emailTemplatePreview {
+        max-width: 100%;
+    }
 }
