@@ -7,13 +7,13 @@
     <tr>
         <td colspan="2" style="background-color: #ffffff; padding: 0 20px; text-align: left;">
             <h4>Hi [FirstName],</h4>
-            <p>Thanks for booking with Hamilton Gymnastics Club. {{bookingTypeStatement}}</p>
+            <p>Thanks for booking with Hamilton Gymnastics Club. You have been re-enrolled into our <span class="termName" id="termName1">{{termName}}</span> Term. Classes return from <span class="termStartDate" id="termStartDate1">{{termStartDate}}.</span></p>
         <tr>
             <td colspan="2" id="classBookingDetails" style="padding: 0 20px;">
                 <p id="classType" style="margin: 0; font-weight: bold;">{{classType}} Gymnastics Class</p>
-                <p id="className" style="margin: 0; font-weight: bold;">{{className}}</p>
-                <p id="classDayTime" style="margin-top: 0; font-weight: bold;">{{classDay}} {{classTime}}</p>
-                <p id="termSelected">{{termName}}</p>
+                <p id="classNameAge" style="margin: 0; font-weight: bold;"><span id="className">{{className}}</span> <span id="classAge">{{classAge}}</span></p>
+                <p id="classDayTime" style="margin-top: 0; font-weight: bold;"><span id="classDay">{{classDay}}</span> <span id="classTime">{{classTime}}</span></p>
+                <p><span class="termName" id="termName2">{{termName}}</span> Term</p>
                 <p id="bookedForStatement" style="font-weight: bold;">Booked for: [FullName]</p>
             </td>
         </tr>
@@ -21,22 +21,21 @@
             <td style="padding: 0 20px; vertical-align: top;">
                 <!-- Term Dates -->
                 <p><span style="font-weight: bold;">Term Dates:</span><br>
-                    {{termStartDate}} - {{termEndDate}}
+                    <span class="termStartDate" id="termStartDate2">{{termStartDate}}</span> - <span class="termEndDate" id="termEndDate1">{{termEndDate}}</span>
                 </p>
                 <p><span style="font-weight: bold;">Closures & Events:</span><br>
-                    {{offDates}}
+                    <span id="offDates">{{offDates}}</span>
                 </p>
             </td>
             <td style="padding: 0 20px; vertical-align: top;">
                 <!-- Location/Address -->
-                <p><span style="font-weight: bold;">{{venueName}}</span><br>
-                    {{fullAddress}}
+                <p><span id="venueName" style="font-weight: bold;">{{venueName}}</span><br>
+                    <span id="fullAddress">{{fullAddress}}</span>
                 </p>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="padding: 0 20px; border-bottom: 1.5px solid #c5c5c5;">
-                {{winter2025AutoEnrolSpecific}}
                 <p>There will be no change to your membership fees in January 2025. From 1st February, we will start implementing a phased fee increase as communicated to you on 2nd December 2024.</p>
                 <p>From April 2025, your membership fees will be:</p>
                 <p style="font-weight: bold; margin-bottom: 0;">£28.75</p>
