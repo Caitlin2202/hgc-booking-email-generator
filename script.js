@@ -28,19 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('class-day').addEventListener('change', () => updateClassList(allClasses));
         document.getElementById('venue').addEventListener('change', () => updateClassList(allClasses));
         document.getElementById('class-type').addEventListener('change', () => updateClassList(allClasses));
+        document.getElementById('class-age').addEventListener('change', () => updateClassList(allClasses));
 
         // Function to update class list based on filters
         function updateClassList(classes) {
             const selectedDay = document.getElementById('class-day').value;
             const selectedVenue = document.getElementById('venue').value;
             const selectedType = document.getElementById('class-type').value;
+            const selectedAge = document.getElementById('class-age').value;
 
             // Filter classes based on user input
             const filteredClasses = classes.filter(classItem => {
                 return (
                     (selectedDay === "" || classItem.classDay === selectedDay) &&
                     (selectedVenue === "" || classItem.venueName === selectedVenue) &&
-                    (selectedType === "" || classItem.classType === selectedType)
+                    (selectedType === "" || classItem.classType === selectedType) &&
+                    (selectedAge === "" || classItem.className === selectedAge)
                 );
             });
 
