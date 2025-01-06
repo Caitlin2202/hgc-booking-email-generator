@@ -47,6 +47,16 @@
     transition: background-color 0.3s ease;
 }
 
+textarea {
+    min-height: 600px;
+    display: block;
+    width: 100%;
+    border: 1px solid #ff3451;
+    border-radius: 5px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
 /* Class Filters */
 .class-filters-wrapper {
     display: block;
@@ -78,7 +88,7 @@ label {
 }
 
 /* Style the date input field */
-#booking-start-date {
+#booking-start-date, input[type="text"] {
     font-size: 16px; /* Adjust text size */
     padding: 8px 12px; /* Add padding for better clickability */
     border: 1px solid #ff3451; /* Match company colors */

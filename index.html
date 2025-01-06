@@ -16,6 +16,9 @@
                         <label for="email-template">Email template:</label>
                         <select required id="email-template" name="email-template">
                             <option value="" selected disabled>--Select a template--</option>
+                            <optgroup label="General Messages">
+                                <option value="general-email">General message (text only)</option>
+                            </optgroup>
                             <optgroup label="Booking Confirmation Emails">
                                 <option value="taster">Taster class</option>
                                 <option value="new-member">New member term booking</option>
@@ -23,79 +26,100 @@
                             </optgroup>
                         </select>
                     </div>
-                    <div class="class-filters-wrapper">
-                        <h4>Class Filters</h4>
-                        <p>Select options below to narrow down the available classes.</p>
+                    <div id="general-emails-form-container" style="display: none;">
+                        <h4>Message Details</h4>
+                        <p>Add a title to the top of your message.</p>
+                        <div class="field-wrapper general-email-field">
+                            <label for="messageTitle">Message title:</label>
+                            <input id="messageTitle" name="messageTitle" type="text">
+                        </div>
+                        <p>Select the signature you want to use for your message.</p>
+                        <div class="field-wrapper general-email-field">
+                            <label for="messageSignature">Message signature:</label>
+                            <select required id="messageSignature" name="messageSignature">
+                                <option value="" selected disabled>--Select a signature--</option>
+                                <option value="adminTeam">HGC Admin Team</option>
+                                <option value="managementTeam">HGC Management Team</option>
+                            </select>
+                        </div>
+                        <p>Write your message content in the textbox below:</p>
+                        <div class="field-wrapper general-email-field">
+                            <label for="messageContent">Message content:</label>
+                            <textarea id="messageContent" placeholder="Type your message"></textarea>
+                        </div>
+                    </div>
+                    <div id="booking-emails-form-container" style="display: none;">
+                        <div class="class-filters-wrapper">
+                            <h4>Class Filters</h4>
+                            <p>Select options below to narrow down the available classes.</p>
+                            <div class="field-wrapper booking-confirmation-field">
+                                <label for="class-day">Class day:</label>
+                                <select required id="class-day" name="class-day">
+                                    <option value="" selected disabled>--Select the class day--</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                            </div>
+                            <div class="field-wrapper booking-confirmation-field">
+                                <label for="venue">Class venue:</label>
+                                <select id="venue" name="venue">
+                                    <option value="" selected disabled>--Select a venue--</option>
+                                    <option value="Eddlewood">Eddlewood</option>
+                                    <option value="Blantyre">Blantyre</option>
+                                </select>
+                            </div>
+                            <div class="field-wrapper booking-confirmation-field">
+                                <label for="class-type">Class type:</label>
+                                <select id="class-type" name="class-type">
+                                    <option value="" selected disabled>--Select a class type--</option>
+                                    <option value="Preschool">Preschool</option>
+                                    <option value="Recreational">Rec</option>
+                                    <option value="ASN">ASN</option>
+                                </select>
+                            </div>
+                            <div class="field-wrapper booking-confirmation-field">
+                                <label for="class-age">Class age:</label>
+                                <select id="class-age" name="class-age">
+                                    <option value="" selected disabled>--Select a class age--</option>
+                                    <option value="Fit into Gym">Fit into Gym (4.5 - 16 yrs)</option>
+                                    <option value="GymFun">GymFun (12 mths - 3 yrs)</option>
+                                    <option value="GymStart">GymStart (18 mths - 3 yrs)</option>
+                                    <option value="GymStart">GymBuds (3 - 5 yrs)</option>
+                                    <option value="P1-P4">P1-P4 (4.5 - 8 yrs)</option>
+                                    <option value="P4-P7">P4-P7 (8 - 12 yrs)</option>
+                                    <option value="P1-P7">P1-P7 (4.5 - 12 yrs)</option>
+                                    <option value="P3+">P3+ (7 yrs +)</option>
+                                    <option value="P4+">P4+ (8 yrs +)</option>
+                                    <option value="P5+">P5+ (9 yrs +)</option>
+                                    <option value="P6+">P6+ (10 yrs +)</option>
+                                    <option value="S1+">S1+ (11 yrs +)</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="field-wrapper booking-confirmation-field">
-                            <label for="class-day">Class day:</label>
-                            <select required id="class-day" name="class-day">
-                                <option value="" selected disabled>--Select the class day--</option>
-                                <option value="Monday">Monday</option>
-                                <option value="Tuesday">Tuesday</option>
-                                <option value="Wednesday">Wednesday</option>
-                                <option value="Thursday">Thursday</option>
-                                <option value="Friday">Friday</option>
-                                <option value="Saturday">Saturday</option>
-                                <option value="Sunday">Sunday</option>
+                            <label for="class-booked">Class booked:</label>
+                            <select required id="class-booked" name="class-booked">
+                                <option value="" disabled>--Select a class</option>
+                                <!-- Classes will be populated here -->
                             </select>
                         </div>
                         <div class="field-wrapper booking-confirmation-field">
-                            <label for="venue">Class venue:</label>
-                            <select id="venue" name="venue">
-                                <option value="" selected disabled>--Select a venue--</option>
-                                <option value="Eddlewood">Eddlewood</option>
-                                <option value="Blantyre">Blantyre</option>
+                            <label for="term-booked">Term:</label>
+                            <select required id="term-booked" name="term-booked">
+                                <option value="" selected disabled>--Select a term--</option>
+                                <!-- Terms will be populated here -->
                             </select>
                         </div>
                         <div class="field-wrapper booking-confirmation-field">
-                            <label for="class-type">Class type:</label>
-                            <select id="class-type" name="class-type">
-                                <option value="" selected disabled>--Select a class type--</option>
-                                <option value="Preschool">Preschool</option>
-                                <option value="Recreational">Rec</option>
-                                <option value="ASN">ASN</option>
-                            </select>
+                            <label for="booking-start-date">Start Date:</label>
+                            <input type="date" required id="booking-start-date" name="booking-start-date">
+                            <span id="startDateError" style="color: red; display: none;">The start date is outside the selected term dates. Please select a valid date.</span>
                         </div>
-                        <div class="field-wrapper booking-confirmation-field">
-                            <label for="class-age">Class age:</label>
-                            <select id="class-age" name="class-age">
-                                <option value="" selected disabled>--Select a class age--</option>
-                                <option value="Fit into Gym">Fit into Gym (4.5 - 16 yrs)</option>
-                                <option value="GymFun">GymFun (12 mths - 3 yrs)</option>
-                                <option value="GymStart">GymStart (18 mths - 3 yrs)</option>
-                                <option value="GymStart">GymBuds (3 - 5 yrs)</option>
-                                <option value="P1-P4">P1-P4 (4.5 - 8 yrs)</option>
-                                <option value="P4-P7">P4-P7 (8 - 12 yrs)</option>
-                                <option value="P1-P7">P1-P7 (4.5 - 12 yrs)</option>
-                                <option value="P3+">P3+ (7 yrs +)</option>
-                                <option value="P4+">P4+ (8 yrs +)</option>
-                                <option value="P5+">P5+ (9 yrs +)</option>
-                                <option value="P6+">P6+ (10 yrs +)</option>
-                                <option value="S1+">S1+ (11 yrs +)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="field-wrapper booking-confirmation-field">
-                        <label for="class-booked">Class booked:</label>
-                        <select required id="class-booked" name="class-booked">
-                            <option value="" disabled>--Select a class</option>
-                            <!-- Classes will be populated here -->
-                        </select>
-                    </div>
-                    <div class="field-wrapper booking-confirmation-field">
-                        <label for="term-booked">Term:</label>
-                        <select required id="term-booked" name="term-booked">
-                            <option value="" selected disabled>--Select a term--</option>
-                            <!-- Terms will be populated here -->
-                        </select>
-                    </div>
-                    <div class="field-wrapper booking-confirmation-field">
-                        <label for="booking-start-date">Start Date:</label>
-                        <input type="date" required id="booking-start-date" name="booking-start-date">
-                        <span id="startDateError" style="color: red; display: none;">The start date is outside the selected term dates. Please select a valid date.</span>
-                    </div>
-                    <div class="field-wrapper">
-                        <button type="submit">Generate booking confirmation</button>
                     </div>
                 </form>
             </div>
@@ -122,6 +146,30 @@
                         </tr>
                     </table>
                 </div>
+            </div>
+            <!--<div id="emailCodePreview">
+                <h3>Generated HTML Code</h3>
+                <textarea id="emailCode">
+                    <table id="emailHeader" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto;">
+                        <tr>
+                            <td style="padding: 0; margin: 0;">
+                                <img src="https://storage.clubright.co.uk/messageimages/cbb27ddf-3039-442b-bfc9-ab0df42fb5e1.png" style="display: block; width: 100%;" alt="Club Logo">
+                            </td>
+                        </tr>
+                    </table>
+                    {{emailContent}}
+                    <table id="emailFooter" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto;background-color: #ff3451; padding: 0; font-family: Arial, sans-serif;">
+                        <tr>
+                            <td style="padding: 20px; color: #ffffff; font-size: 70%; text-align: center;">
+                                <p>Hamilton Gymnastics Club is a charity registered in Scotland. Charity no: SC043190.<br>
+                                    Unit 4-10, Block 6, Third Rd, Blantyre Industrial Estate, Blantyre, South Lanarkshire, G72 0UP<br>
+                                    Phone: 01698 760530<br>
+                                    Email: <a href="mailto:hgcenquiry@gmail.com" style="text-decoration: none; color: #ffffff;">hgcenquiry@gmail.com</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </textarea>-->
             </div>
         </div>
         <script type="module" src="script.js"></script>

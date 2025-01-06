@@ -113,10 +113,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const templateSelector = document.getElementById('email-template');
+    const generalEmailsForm = document.getElementById('general-emails-form-container');
+    const bookingEmailsForm = document.getElementById('booking-emails-form-container');
+
+    // Function to hide all email form fields
+    function hideAllFields() {
+        const allFormContainers = [generalEmailsForm, bookingEmailsForm];
+        allFormContainers.forEach(formContainer => {
+            formContainer.style.display = 'none';
+            const fields = formContainer.querySelectorAll('select, input, textarea');
+            fields.forEach(field => {
+                field.disabled = true;
+                field.required = false;
+                field.value = '';
+            });
+        });
+    }
+
+    // Function to show specific email form fields
+    function showFields(formContainer) {
+        formContainer.style.display = 'block';
+
+        const fields = formContainer.querySelectorAll('input, select, textarea');
+        fields.forEach(field => {
+            field.disabled = false;
+            field.required = true;
+            field.value = '';
+        });
+    }
+
     const emailTemplateContainer = document.getElementById('emailTemplate');
     const termSelector = document.getElementById('term-booked');
     const bookingStartDateInput = document.getElementById('booking-start-date');
+    const generalMessageTitleInput = document.getElementById('messageTitle');
+    const generalMessageContentInput = document.getElementById('messageContent');
+    const generalMessageSignatureInput = document.getElementById('messageSignature');
 
+    // General message placeholders
+    let placeholderGeneralMessageTitle = null;
+    let placeholderGeneralMessageContent = null;
+    let placeholderGeneralMessageSignature = null;
+
+    // Booking confirmation placeholders
     let placeholderClassData = null; // store the class data
     let placeholderTermData = null;  // store the term data
     let placeholderBookingData = null; // store the booking data
@@ -131,9 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingStartDateInput.value = '';
 
         // Reset the placeholders to empty (no previously selected values)
+        placeholderGeneralMessageTitle = {};
+        placeholderGeneralMessageSignature = {};
+        placeholderGeneralMessageContent = {};
         placeholderClassData = {};
         placeholderTermData = {};
         placeholderBookingData = {};
+
+        // Hide all form fields before showing the relevant ones
+        hideAllFields();
 
         // Check if a valid template is selected
         if (selectedTemplate) {
@@ -162,6 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             templateContent
                         );
                     }
+
+                    // Show the relevant form fields based on the template selected
+                    if (selectedTemplate === 'general-email') {
+                        showFields(generalEmailsForm);
+                    } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol') {
+                        showFields(bookingEmailsForm);
+                    }
                 })
                 .catch(error => {
                     console.error('Error loading template:', error);
@@ -175,6 +226,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    generalMessageTitleInput.addEventListener('input', () => {
+        const messageTitle = generalMessageTitleInput.value;
+        placeholderGeneralMessageTitle = {
+            messageTitle: messageTitle
+        };
+
+        updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData)
+    })
+
+    const signatureMap = {
+        "adminTeam": "HGC Admin Team",
+        "managementTeam": "HGC Management Team"
+    };
+
+    generalMessageSignatureInput.addEventListener('change', () => {
+        const messageSignature = generalMessageSignatureInput.value;
+        const signatureText = signatureMap[messageSignature] || "";
+
+        placeholderGeneralMessageSignature = {
+            messageSignature: signatureText
+        };
+
+        updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData)
+    })
+
+    generalMessageContentInput.addEventListener('input', () => {
+        const messageContent = generalMessageContentInput.value;
+        const formattedMessageContent = messageContent
+            .split(/\n{2,}/) // Split by two or more newline characters (indicating a paragraph break)
+            .map(paragraph => {
+                // Replace single line breaks within paragraphs with <br> tags
+                return `<p>${paragraph.split("\n").join("<br>")}</p>`;
+            })
+            .join(""); // Combine all <p> tags into a single string
+
+        console.log(formattedMessageContent);
+        placeholderGeneralMessageContent = {
+            messageContent: formattedMessageContent
+        };
+
+        updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData)
+    })
+
     bookingStartDateInput.addEventListener('change', () => {
         const bookingStartDate = bookingStartDateInput.value;
         const formattedBookingStartDate = formatDate(bookingStartDate);
@@ -182,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bookingStartDate: formattedBookingStartDate
         };
 
-        updateEmailTemplate(placeholderClassData, placeholderTermData, placeholderBookingData)
+        updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData)
     })
 
     // Combined function to format both date strings (DD/MM/YYYY) and ISO date strings (YYYY-MM-DD)
@@ -241,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     fullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
                                 };
 
-                                updateEmailTemplate(placeholderClassData, placeholderTermData, placeholderBookingData);
+                                updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData);
                             })
                             .catch(error => console.error('Error loading venue data:', error));
                     }
@@ -266,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             termEndDate: selectedTerm.endDate || '',
                             offDates: selectedTerm.offDates || '',
                         };
-                        updateEmailTemplate(placeholderClassData, placeholderTermData, placeholderBookingData);
+                        updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData);
                     }
                 } else {
                     console.error('allTerms is not an array or selectedTermName is invalid');
@@ -276,9 +370,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading term data:', error));
 
         // Function to update email template content based on placeholders
-        function updateEmailTemplate(placeholderClassData, placeholderTermData, placeholderBookingData) {
+        function updateEmailTemplate(placeholderGeneralMessageTitle, placeholderGeneralMessageSignature, placeholderGeneralMessageContent, placeholderClassData, placeholderTermData, placeholderBookingData) {
             const selectedTemplate = templateSelector.value;
             const templateFile = `${selectedTemplate}.html`;
+
+            console.log(placeholderGeneralMessageTitle);
+            console.log(placeholderGeneralMessageContent);
+            console.log(placeholderGeneralMessageSignature);
 
             // Fetch the template and replace placeholders
             fetch(templateFile)
@@ -286,7 +384,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(templateContent => {
                     let updatedTemplateContent = templateContent;
 
-                    // Replace placeholders for both class and term data
+                    // Replace placeholders
+                    if (placeholderGeneralMessageTitle) {
+                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'general-message');
+                    }
+                    if (placeholderGeneralMessageSignature) {
+                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageSignature, 'general-message');
+                    }
+                    if (placeholderGeneralMessageContent) {
+                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageContent, 'general-message');
+                    }
                     if (placeholderClassData) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderClassData, 'class');
                     }
@@ -311,7 +418,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Function to replace placeholders in the template content
         function replacePlaceholders(templateContent, placeholderData, dataType) {
-            if (dataType === 'class') {
+            if (dataType === 'general-message') {
+                return templateContent.replace(/{{messageTitle}}/g, placeholderData.messageTitle || '{{messageTitle}}')
+                    .replace(/{{messageSignature}}/g, placeholderData.messageSignature || '{{messageSignature}}')
+                    .replace(/{{messageContent}}/g, placeholderData.messageContent || '{{messageContent}}');
+            } else if (dataType === 'class') {
                 return templateContent.replace(/{{classType}}/g, placeholderData.classType)
                     .replace(/{{className}}/g, placeholderData.className)
                     .replace(/{{classAge}}/g, placeholderData.classAge)
@@ -333,4 +444,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return templateContent; // Return unchanged template if no valid data type
         }
+
 });
