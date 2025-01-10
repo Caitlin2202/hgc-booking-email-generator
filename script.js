@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     flatpickr("#booking-start-date", {
         dateFormat: "Y-m-d", // Format: Year-Month-Day
         defaultDate: "today", // Default to today's date
-        minDate: "today", // Prevent selecting past dates
+        minDate: "2025-01-06", // Prevent selecting past dates
         disable: ["2025-01-01"], // Example: Disable specific dates
         locale: {
             firstDayOfWeek: 1 // Set Monday as the first day of the week
