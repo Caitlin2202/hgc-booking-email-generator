@@ -348,9 +348,12 @@ document.addEventListener('DOMContentLoaded', () => {
     classChangeDateInput.addEventListener('change', () => {
         const classChangeDate = classChangeDateInput.value;
         const formattedClassChangeDate = formatDate(classChangeDate);
-        placeholderNewClassData = {
-            classChangeDate: formattedClassChangeDate
-        };
+        
+        if (!placeholderNewClassData) {
+            placeholderNewClassData = {};
+        }
+
+        placeholderNewClassData.classChangeDate = formattedClassChangeDate;
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
