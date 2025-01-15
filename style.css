@@ -29,6 +29,12 @@
     font-weight: bold; /* Makes labels stand out */
 }
 
+.changing-class-field {
+    display: inline-block;
+    width: 45%;
+    padding: 10px;
+}
+
 /* Adjust spacing for the button */
 .field-wrapper button[type="submit"] {
     margin-top: 20px; /* Adds space above the button */
