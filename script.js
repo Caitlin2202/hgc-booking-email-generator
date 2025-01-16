@@ -438,17 +438,18 @@ document.addEventListener('DOMContentLoaded', () => {
                                         };
                                     }  else if (container.id === 'new-class-booked') {
 
-                                        placeholderNewClassData = {
-                                            newClassType: selectedClass.classType || '',
-                                            newClassName: selectedClass.className || '',
-                                            newClassAge: selectedClass.classAge || '',
-                                            newClassDay: selectedClass.classDay || '',
-                                            newClassTime: selectedClass.classTime || '',
-                                            newDuration: selectedClass.duration || '',
-                                            newVenueName: selectedClass.venueName || '',
-                                            newFullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
+                                        if(!placeholderNewClassData) {
+                                            placeholderNewClassData = {}
                                         };
-                                    }
+                                        placeholderNewClassData.newClassType = selectedClass.classType || ''
+                                        placeholderNewClassData.newClassName = selectedClass.className || ''
+                                        placeholderNewClassData.newClassAge = selectedClass.classAge || '',
+                                        placeholderNewClassData.newClassDay = selectedClass.classDay || '',
+                                        placeholderNewClassData.newClassTime = selectedClass.classTime || '',
+                                        placeholderNewClassData.newDuration = selectedClass.duration || '',
+                                        placeholderNewClassData.newVenueName = selectedClass.venueName || '',
+                                        placeholderNewClassData.newFullAddress = selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '';
+                                    };
 
                                     updateEmailTemplate(
                                         placeholderGeneralMessageTitle,
