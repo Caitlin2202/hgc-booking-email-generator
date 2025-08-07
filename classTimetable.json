@@ -147,9 +147,9 @@
     "classDay": "Friday",
     "classTime": "4:30 PM",
     "duration": "55 minutes",
-    "className": "P1-P7",
-    "classAge": "4.5 to 12 years",
-    "classCode": "FR430RBP1P7EW"
+    "className": "P4+",
+    "classAge": "8 to 16 years",
+    "classCode": "FR430RBP4+EW"
   },
   {
     "venueName": "Eddlewood",
@@ -335,31 +335,21 @@
     "venueName": "Blantyre",
     "classType": "Preschool",
     "classDay": "Tuesday",
-    "classTime": "11:30 AM",
+    "classTime": "11:45 AM",
     "duration": "45 minutes",
     "className": "GymBuds",
     "classAge": "3 to 5 years",
-    "classCode": "TU1130PSGBU4"
+    "classCode": "TU1145PSGBU4"
   },
   {
     "venueName": "Blantyre",
     "classType": "Preschool",
     "classDay": "Tuesday",
-    "classTime": "12:30 PM",
-    "duration": "45 minutes",
-    "className": "GymStart",
-    "classAge": "18 months to 3 years",
-    "classCode": "TU1230PSGSU4"
-  },
-  {
-    "venueName": "Blantyre",
-    "classType": "Preschool",
-    "classDay": "Tuesday",
-    "classTime": "1:30 PM",
+    "classTime": "1:00 PM",
     "duration": "45 minutes",
     "className": "GymBuds",
     "classAge": "3 to 5 years",
-    "classCode": "TU130PSGBU4"
+    "classCode": "TU100PSGBU4"
   },
   {
     "venueName": "Blantyre",
