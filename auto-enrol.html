@@ -8,24 +8,31 @@
     <tr>
         <td colspan="2" style="background-color: #ffffff; padding: 0 20px; text-align: left;">
             <h4>Hi [FirstName],</h4>
-            <p>Thanks for booking with Hamilton Gymnastics Club. You have been re-enrolled into our <span
-                    class="termName" id="termName1">{{termName}}</span> Term. Classes return from <span
-                    class="termStartDate" id="termStartDate1">{{termStartDate}}.</span></p>
-    </tr>
-    <tr>
-        <td style="padding: 20px; vertical-align: top;">
-            <!-- Term Dates -->
-            <p><span style="font-weight: bold;">Term Dates:</span><br>
-                <span class="termStartDate" id="termStartDate2">{{termStartDate}}</span> - <span class="termEndDate"
-                    id="termEndDate1">{{termEndDate}}</span>
+            <p>Thanks for booking with Hamilton Gymnastics Club. You have been re-enrolled into our <span class="termName" id="termName1">{{termName}}</span> Term. Classes return from <span class="termStartDate" id="termStartDate1">{{termStartDate}}.</span></p>
+        </tr>
+        <tr>
+            <td style="padding: 20px; vertical-align: top;">
+                <!-- Term Dates -->
+                <p><span style="font-weight: bold;">Term Dates:</span><br>
+                    <span class="termStartDate" id="termStartDate2">{{termStartDate}}</span> - <span class="termEndDate" id="termEndDate1">{{termEndDate}}</span>
+                </p>
+                <p><span style="font-weight: bold;">Closures & Events:</span><br>
+                    <span id="offDates">{{offDates}}</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="classBookingDetails" style="padding: 0 20px;">
+                <p style="margin: 0; font-weight: bold;"><span id="classType">{{classType}}</span> Gymnastics Class</p>
+            <p id="classNameAge" style="margin: 0; font-weight: bold;"><span id="className">{{className}}</span> <span id="classAge">{{classAge}}</span></p>
+            <p id="classDayTime" style="margin-top: 0; font-weight: bold;"><span id="classDay">{{classDay}}</span> <span id="classTime">{{classTime}}</span></p>
+            <p><span id="venueName" style="font-weight: bold;">{{venueName}}</span><br>
+                    <span id="fullAddress">{{fullAddress}}</span>
             </p>
-            <p><span style="font-weight: bold;">Closures & Events:</span><br>
-                <span id="offDates">{{offDates}}</span>
-            </p>
-        </td>
-    </tr>
-
-    <tr>
+            <p id="bookedForStatement"><span style="font-weight: bold;">Booked for: [FullName]</span></p>
+            </td>
+        </tr>
+        <tr>
         <td colspan="2" style="padding: 20px; border-bottom: 1.5px solid #c5c5c5;">
             <p>
                 HGC Management Team<br>
