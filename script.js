@@ -557,6 +557,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (placeholderGeneralMessageTitle) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'general-message');
                     }
+                    if (placeholderGeneralMessageTitle) {
+                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'SGBG-membership');
+                    }
                     if (placeholderGeneralMessageEmployeeName) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageEmployeeName, 'general-message');
                     }
