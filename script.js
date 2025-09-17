@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const form = document.getElementById('emailTemplateForm');
     const classListContainers = document.querySelectorAll('.class-select');
-    const classBookedContainer = document.getElementById('class-booked');
     const classChangePrevContainer = document.getElementById('prev-class-booked');
     const classChangeNewContainer = document.getElementById('new-class-booked');
     const termListContainer = document.getElementById('term-booked');
@@ -167,11 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const classChangeDateInput = document.getElementById('class-change-start-date');
     const generalMessageTitleInput = document.getElementById('messageTitle');
     const generalMessageContentInput = document.getElementById('messageContent');
+    const generalMessageEmployeeName = document.getElementById('employeeName');
     const generalMessageSignatureInput = document.getElementById('messageSignature');
 
     // General message placeholders
     let placeholderGeneralMessageTitle = null;
     let placeholderGeneralMessageContent = null;
+    let placeholderGeneralMessageEmployeeName = null;
     let placeholderGeneralMessageSignature = null;
 
     // Booking confirmation placeholders
@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reset the placeholders to empty (no previously selected values)
         placeholderGeneralMessageTitle = {};
+        placeholderGeneralMessageEmployeeName = {};
         placeholderGeneralMessageSignature = {};
         placeholderGeneralMessageContent = {};
         placeholderClassData = {};
@@ -268,6 +269,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
+            placeholderGeneralMessageSignature,
+            placeholderGeneralMessageContent,
+            placeholderClassData,
+            placeholderPrevClassData,
+            placeholderNewClassData,
+            placeholderTermData,
+            placeholderBookingData)
+    })
+
+    generalMessageEmployeeName.addEventListener('input', () => {
+        const employeeName = generalMessageEmployeeName.value || "";
+
+        placeholderGeneralMessageEmployeeName = {
+            employeeName: employeeName
+        };
+
+        updateEmailTemplate(
+            placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -292,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -318,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -336,6 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -357,6 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -453,6 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     updateEmailTemplate(
                                         placeholderGeneralMessageTitle,
+                                        placeholderGeneralMessageEmployeeName,
                                         placeholderGeneralMessageSignature,
                                         placeholderGeneralMessageContent,
                                         placeholderClassData,
@@ -487,6 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
                         updateEmailTemplate(
                             placeholderGeneralMessageTitle,
+                            placeholderGeneralMessageEmployeeName,
                             placeholderGeneralMessageSignature,
                             placeholderGeneralMessageContent,
                             placeholderClassData,
@@ -505,6 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Function to update email template content based on placeholders
         function updateEmailTemplate(
             placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
             placeholderGeneralMessageSignature,
             placeholderGeneralMessageContent,
             placeholderClassData,
@@ -528,6 +556,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Replace placeholders
                     if (placeholderGeneralMessageTitle) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'general-message');
+                    }
+                    if (placeholderGeneralMessageEmployeeName) {
+                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageEmployeeName, 'general-message');
                     }
                     if (placeholderGeneralMessageSignature) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageSignature, 'general-message');
@@ -567,8 +598,11 @@ document.addEventListener('DOMContentLoaded', () => {
         function replacePlaceholders(templateContent, placeholderData, dataType) {
             if (dataType === 'general-message') {
                 return templateContent.replace(/{{messageTitle}}/g, placeholderData.messageTitle || '{{messageTitle}}')
+                    .replace(/{{employeeName}}/g, placeholderData.employeeName || '{{employeeName}}')
                     .replace(/{{messageSignature}}/g, placeholderData.messageSignature || '{{messageSignature}}')
                     .replace(/{{messageContent}}/g, placeholderData.messageContent || '{{messageContent}}');
+            } else if (dataType === 'SGBG-membership') {
+                return templateContent.replact(/{{messageTitle}}/g, 'Scottish/British Gymnastics Membership' || '{{messageTitle}}')
             } else if (dataType === 'class') {
                 return templateContent.replace(/{{classType}}/g, placeholderData.classType)
                     .replace(/{{className}}/g, placeholderData.className)
