@@ -557,9 +557,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (placeholderGeneralMessageTitle) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'general-message');
                     }
-                    if (placeholderGeneralMessageTitle) {
-                        updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageTitle, 'SGBG-membership');
-                    }
                     if (placeholderGeneralMessageEmployeeName) {
                         updatedTemplateContent = replacePlaceholders(updatedTemplateContent, placeholderGeneralMessageEmployeeName, 'general-message');
                     }
@@ -604,8 +601,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{employeeName}}/g, placeholderData.employeeName || '{{employeeName}}')
                     .replace(/{{messageSignature}}/g, placeholderData.messageSignature || '{{messageSignature}}')
                     .replace(/{{messageContent}}/g, placeholderData.messageContent || '{{messageContent}}');
-            } else if (dataType === 'SGBG-membership') {
-                return templateContent.replact(/{{messageTitle}}/g, 'Scottish/British Gymnastics Membership' || '{{messageTitle}}')
             } else if (dataType === 'class') {
                 return templateContent.replace(/{{classType}}/g, placeholderData.classType)
                     .replace(/{{className}}/g, placeholderData.className)
