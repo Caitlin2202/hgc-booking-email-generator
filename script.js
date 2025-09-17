@@ -601,6 +601,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{employeeName}}/g, placeholderData.employeeName || '{{employeeName}}')
                     .replace(/{{messageSignature}}/g, placeholderData.messageSignature || '{{messageSignature}}')
                     .replace(/{{messageContent}}/g, placeholderData.messageContent || '{{messageContent}}');
+            } else if (dataType === 'SGBG-message') {
+                return templateContent
             } else if (dataType === 'class') {
                 return templateContent.replace(/{{classType}}/g, placeholderData.classType)
                     .replace(/{{className}}/g, placeholderData.className)
