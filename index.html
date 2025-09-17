@@ -17,6 +17,7 @@
                         <select required id="email-template" name="email-template">
                             <option value="" selected disabled>--Select a template--</option>
                             <optgroup label="General Messages">
+                                <option value="sgbg-membership">SG-BG membership reminder</option>
                                 <option value="general-email">General message (text only)</option>
                             </optgroup>
                             <optgroup label="Booking Confirmation Emails">
@@ -33,9 +34,13 @@
                         <h3>Message Details</h3>
                         <div class="field-wrapper general-email-field">
                             <label for="messageTitle">Message title:</label>
-                            <input id="messageTitle" name="messageTitle" type="text" placeholder="Type here to add a title to the top of your message.">
+                            <input required id="messageTitle" name="messageTitle" type="text" placeholder="Type here to add a title to the top of your message.">
                         </div>
-                        <p>Select the signature you want to use for your message.</p>
+                        <p>Enter your name and select the signature you want to use for your message.</p>
+                        <div class="field-wrapper general-email-field">
+                            <label for="employeeName">Your name:</label>
+                            <input type="text" required id="employeeName" name="employeeName" placeholder="Joe Bloggs">
+                        </div>
                         <div class="field-wrapper general-email-field">
                             <label for="messageSignature">Message signature:</label>
                             <select required id="messageSignature" name="messageSignature">
