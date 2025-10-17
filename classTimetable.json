@@ -44,7 +44,7 @@
     "classType": "Recreational",
     "classDay": "Monday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P4",
     "classAge": "4.5 to 8 years",
     "classCode": "MO330RP1P4EW"
@@ -54,7 +54,7 @@
     "classType": "Recreational",
     "classDay": "Monday",
     "classTime": "4:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P4-P7",
     "classAge": "8 to 12 years",
     "classCode": "MO430RP4P7EW"
@@ -64,7 +64,7 @@
     "classType": "Recreational",
     "classDay": "Tuesday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P4",
     "classAge": "4.5 to 8 years",
     "classCode": "TU330RP1P4EW"
@@ -74,7 +74,7 @@
     "classType": "Recreational",
     "classDay": "Tuesday",
     "classTime": "4:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P4",
     "classAge": "4.5 to 8 years",
     "classCode": "TU430RP1P4EW"
@@ -84,7 +84,7 @@
     "classType": "Recreational",
     "classDay": "Tuesday",
     "classTime": "5:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "TU530RP1P7EW"
@@ -94,7 +94,7 @@
     "classType": "Recreational",
     "classDay": "Wednesday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P4",
     "classAge": "4.5 to 8 years",
     "classCode": "WE330RP1P4EW"
@@ -104,7 +104,7 @@
     "classType": "Recreational",
     "classDay": "Wednesday",
     "classTime": "4:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P4-P7",
     "classAge": "8 to 12 years",
     "classCode": "WE430RP4P7EW"
@@ -115,7 +115,7 @@
     "classSubtype": "Boys",
     "classDay": "Wednesday",
     "classTime": "5:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "WE530RBP1P7EW"
@@ -125,7 +125,7 @@
     "classType": "Recreational",
     "classDay": "Thursday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "TH330RP1P7EW"
@@ -135,7 +135,7 @@
     "classType": "Recreational",
     "classDay": "Friday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "FR330RP1P7EW"
@@ -146,17 +146,27 @@
     "classSubtype": "Boys",
     "classDay": "Friday",
     "classTime": "4:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P4+",
     "classAge": "8 to 16 years",
     "classCode": "FR430RBP4+EW"
   },
   {
     "venueName": "Eddlewood",
+    "classType": "Advanced Recreational",
+    "classDay": "Sunday",
+    "classTime": "1:00 PM",
+    "duration": "90 minutes",
+    "className": "P3+",
+    "classAge": "7 years plus",
+    "classCode": "SU100ADVP3+EW"
+  },
+  {
+    "venueName": "Eddlewood",
     "classType": "Recreational",
     "classDay": "Sunday",
     "classTime": "2:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "SU230RP1P7EW"
@@ -166,7 +176,7 @@
     "classType": "Recreational",
     "classDay": "Sunday",
     "classTime": "3:30 PM",
-    "duration": "55 minutes",
+    "duration": "60 minutes",
     "className": "P1-P7",
     "classAge": "4.5 to 12 years",
     "classCode": "SU330RP1P7EW"
@@ -680,6 +690,16 @@
     "className": "GymBuds",
     "classAge": "3 to 5 years",
     "classCode": "FR1100PSGBU4"
+  },
+  {
+    "venueName": "Blantyre",
+    "classType": "Preschool",
+    "classDay": "Friday",
+    "classTime": "11:20 AM",
+    "duration": "45 minutes",
+    "className": "GymBuds",
+    "classAge": "3 to 5 years",
+    "classCode": "FR1120PSGBU4"
   },
   {
     "venueName": "Blantyre",
