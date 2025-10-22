@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('classTimetable.json')
     .then(response => response.json()) // Parse JSON data
     .then(classes => {
-        let allClasses = classes; // Store all classes
+        let allClasses = classes.filter(c => c.active !== false); // Store all classes
         // Call the function to populate the dropdown initially
         populateClassDropdown(allClasses);
 
