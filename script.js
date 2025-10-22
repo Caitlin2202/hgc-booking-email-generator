@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const classFilters = document.querySelectorAll('.class-filter');
     const classListContainers = document.querySelectorAll('.class-select');
     const classChangePrevContainer = document.getElementById('prev-class-booked');
     const classChangeNewContainer = document.getElementById('new-class-booked');
@@ -131,11 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const generalEmailsForm = document.getElementById('general-emails-form-container');
     const bookingEmailsForm = document.getElementById('booking-emails-form-container');
     const changingClassForm = document.getElementById('changing-class-form-container');
-    const classFilters = document.getElementById('class-filters-container');
+    const classFiltersContainer = document.getElementById('class-filters-container');
 
     // Function to hide all email form fields
     function hideAllFields() {
-        const allFormContainers = [generalEmailsForm, bookingEmailsForm, changingClassForm, classFilters];
+        const allFormContainers = [generalEmailsForm, bookingEmailsForm, changingClassForm, classFiltersContainer];
         allFormContainers.forEach(formContainer => {
             formContainer.style.display = 'none';
             const fields = formContainer.querySelectorAll('select, input, textarea');
@@ -185,7 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     templateSelector.addEventListener('change', () => {
         const selectedTemplate = templateSelector.value;
 
-        // Reset class, term & booking fields when a template selection is changed
+        // Reset filter, class, term & booking fields when a template selection is changed
+        classFilters.forEach(filter => {
+            filter.value = '';
+        });
         classListContainers.forEach(container => {
             container.value = '';
         });
@@ -209,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ensure class filters stay visible for the appropriate templates
         if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol' || selectedTemplate === 'changing-class') {
-            showFields(classFilters);  // Keep class filters visible when needed
+            showFields(classFiltersContainer);  // Keep class filters visible when needed
         }
 
         // Check if a valid template is selected
@@ -244,9 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (selectedTemplate === 'general-email') {
                         showFields(generalEmailsForm);
                     } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol') {
-                        showFields(bookingEmailsForm, classFilters);
+                        showFields(bookingEmailsForm, classFiltersContainer);
                     } else if (selectedTemplate === 'changing-class') {
-                        showFields(changingClassForm, classFilters);
+                        showFields(changingClassForm, classFiltersContainer);
                     }
                 })
                 .catch(error => {
