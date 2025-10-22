@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('classTimetable.json')
         .then(response => response.json())
         .then(classes => {
-            let allClasses = classes;
+            let allClasses = classes.filter(c => c.active !== false);
 
             classListContainers.forEach(container => {
                 container.addEventListener('change', () => {

@@ -9,7 +9,8 @@
     "classAge": "4.5 to 16 years",
     "classCode": "SA0915ASNEW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -21,7 +22,8 @@
     "classAge": "4.5 to 16 years",
     "classCode": "SU1145ASNEW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -33,7 +35,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "SU0945PSGSEW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -45,7 +48,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SU1045PSGBEW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -57,7 +61,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "MO330RP1P4EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -69,7 +74,8 @@
     "classAge": "8 to 12 years",
     "classCode": "MO430RP4P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -81,7 +87,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TU330RP1P4EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -93,7 +100,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TU430RP1P4EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -105,7 +113,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "TU530RP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -117,7 +126,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "WE330RP1P4EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -129,7 +139,8 @@
     "classAge": "8 to 12 years",
     "classCode": "WE430RP4P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -142,7 +153,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "WE530RBP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -154,7 +166,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "TH330RP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -166,7 +179,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "FR330RP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -179,7 +193,8 @@
     "classAge": "8 to 16 years",
     "classCode": "FR430RBP4+EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -191,7 +206,8 @@
     "classAge": "7 years plus",
     "classCode": "SU100ADVP3+EW",
     "classMembership": "£43.25",
-    "tasterPrice": "£14.50"
+    "tasterPrice": "£14.50",
+    "active": false
   },
   {
     "venueName": "Eddlewood",
@@ -203,7 +219,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "SU230RP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Eddlewood",
@@ -215,7 +232,8 @@
     "classAge": "4.5 to 12 years",
     "classCode": "SU330RP1P7EW",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -227,7 +245,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "MO930PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -239,7 +258,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "MO1030PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -251,7 +271,8 @@
     "classAge": "3 to 5 years",
     "classCode": "MO1130PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -263,7 +284,8 @@
     "classAge": "3 to 5 years",
     "classCode": "MO100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -275,7 +297,8 @@
     "classAge": "3 to 5 years",
     "classCode": "MO200PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -287,7 +310,8 @@
     "classAge": "3 to 5 years",
     "classCode": "MO430PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -299,7 +323,8 @@
     "classAge": "3 to 5 years",
     "classCode": "MO530PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -311,7 +336,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "MO330RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -323,7 +349,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "MO400RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -335,7 +362,8 @@
     "classAge": "8 to 12 years",
     "classCode": "MO400RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -347,7 +375,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "MO500RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -359,7 +388,8 @@
     "classAge": "8 to 12 years",
     "classCode": "MO500RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -371,7 +401,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "MO600RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -383,7 +414,8 @@
     "classAge": "8 to 12 years",
     "classCode": "MO600RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -395,7 +427,8 @@
     "classAge": "10 years plus",
     "classCode": "MO700RP6+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -407,7 +440,8 @@
     "classAge": "12 years plus",
     "classCode": "MO800RS1+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -419,7 +453,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TU1145PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -431,7 +466,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TU100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -443,7 +479,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TU345PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -455,7 +492,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "TU330RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -467,7 +505,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TU400RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -479,7 +518,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TU400RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -491,7 +531,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TU500RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -503,7 +544,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TU500RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -515,7 +557,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TU600RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -527,7 +570,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TU600RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -539,7 +583,8 @@
     "classAge": "10 years plus",
     "classCode": "TU700RP6+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -551,7 +596,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "WE1000PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -563,7 +609,8 @@
     "classAge": "3 to 5 years",
     "classCode": "WE1100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -575,7 +622,8 @@
     "classAge": "3 to 5 years",
     "classCode": "WE345PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -587,7 +635,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "WE330RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -599,7 +648,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "WE400RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -611,7 +661,8 @@
     "classAge": "8 to 12 years",
     "classCode": "WE400RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -623,7 +674,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "WE500RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -635,7 +687,8 @@
     "classAge": "8 to 12 years",
     "classCode": "WE500RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -647,7 +700,8 @@
     "classAge": "8 to 12 years",
     "classCode": "WE600RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -659,7 +713,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "TH1000PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -671,7 +726,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TH1100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -683,7 +739,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TH100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -695,7 +752,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TH330PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -707,7 +765,8 @@
     "classAge": "3 to 5 years",
     "classCode": "TH430PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -719,7 +778,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "TH330RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -731,7 +791,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TH400RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -743,7 +804,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TH400RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -755,7 +817,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TH500RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -767,7 +830,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TH500RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -779,7 +843,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "TH600RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -791,7 +856,8 @@
     "classAge": "8 to 12 years",
     "classCode": "TH600RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -803,7 +869,8 @@
     "classAge": "10 years plus",
     "classCode": "TH700RP6+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -815,7 +882,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "FR1000PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -827,7 +895,8 @@
     "classAge": "3 to 5 years",
     "classCode": "FR1100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -839,7 +908,8 @@
     "classAge": "3 to 5 years",
     "classCode": "FR1120PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -851,7 +921,8 @@
     "classAge": "3 to 5 years",
     "classCode": "FR100PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -863,7 +934,8 @@
     "classAge": "3 to 5 years",
     "classCode": "FR200PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -875,7 +947,8 @@
     "classAge": "3 to 5 years",
     "classCode": "FR330PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -887,7 +960,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "FR330RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -899,7 +973,8 @@
     "classAge": "8 to 12 years",
     "classCode": "FR330RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -911,7 +986,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "FR430RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -923,7 +999,8 @@
     "classAge": "8 to 12 years",
     "classCode": "FR430RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -935,7 +1012,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "FR530RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -947,7 +1025,8 @@
     "classAge": "8 to 12 years",
     "classCode": "FR530RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -959,7 +1038,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "FR630RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -971,7 +1051,8 @@
     "classAge": "8 to 12 years",
     "classCode": "FR630RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -983,7 +1064,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SA1035PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -995,7 +1077,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SA1135PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1007,7 +1090,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SA1235PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1019,7 +1103,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "SA900RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1031,7 +1116,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SA930RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1043,7 +1129,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SA1030RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1055,7 +1142,8 @@
     "classAge": "8 years plus",
     "classCode": "SA1030RP4+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1067,7 +1155,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SA1130RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1079,7 +1168,8 @@
     "classAge": "8 to 12 years",
     "classCode": "SA1130RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1091,7 +1181,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SA1230RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1103,7 +1194,8 @@
     "classAge": "8 to 12 years",
     "classCode": "SA1230RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1115,7 +1207,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "SU945PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1127,7 +1220,8 @@
     "classAge": "18 months to 3 years",
     "classCode": "SU1045PSGSU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1139,7 +1233,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SU1145PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1151,7 +1246,8 @@
     "classAge": "3 to 5 years",
     "classCode": "SU1245PSGBU4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1163,7 +1259,8 @@
     "classAge": "4.5 to 7 years",
     "classCode": "SU930RP1P2U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1175,7 +1272,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SU1000RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1187,7 +1285,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SU1100RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1199,7 +1298,8 @@
     "classAge": "8 to 12 years",
     "classCode": "SU1100RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1211,7 +1311,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SU1230RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1223,7 +1324,8 @@
     "classAge": "8 to 12 years",
     "classCode": "SU1230RP4P7U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1235,7 +1337,8 @@
     "classAge": "8 years plus",
     "classCode": "SU130RP4+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1247,7 +1350,8 @@
     "classAge": "7 years plus",
     "classCode": "SU230RP3+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1259,7 +1363,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SU330RP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1272,7 +1377,8 @@
     "classAge": "4.5 to 9 years",
     "classCode": "SU415RBP1P5U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1285,7 +1391,8 @@
     "classAge": "10 years plus",
     "classCode": "SU415RBSP5+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1298,7 +1405,8 @@
     "classAge": "4.5 to 8 years",
     "classCode": "SU200RTP1P4U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1311,7 +1419,8 @@
     "classAge": "9 years plus",
     "classCode": "SU300RTP5+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   },
   {
     "venueName": "Blantyre",
@@ -1324,6 +1433,7 @@
     "classAge": "9 years plus",
     "classCode": "SU400RTP5+U4",
     "classMembership": "£28.75",
-    "tasterPrice": "£9.50"
+    "tasterPrice": "£9.50",
+    "active": true
   }
 ]
