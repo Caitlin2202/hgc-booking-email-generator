@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json()) // Parse JSON data
     .then(terms => {
         // Filter out archived terms
-        const visibleTerms = terms.filter(term => !term.archive);
+        const visibleTerms = terms.filter(t => !t.archive);
 
         // Populate dropdown with visible terms
         populateTermDropdown(visibleTerms);
@@ -411,6 +411,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Combined function to format both date strings (DD/MM/YYYY) and ISO date strings (YYYY-MM-DD)
     function formatDate(dateStr) {
+        // Return "tbc" directly if that's what the data says
+        if (typeof dateStr === 'string' && dateStr.trim().toLowerCase() === 'tbc') {
+            return 'tbc';
+        }
+        
         // If the date is in DD/MM/YYYY format (like "12/08/2024")
         if (dateStr.includes('/')) {
             const [day, month, year] = dateStr.split('/');
