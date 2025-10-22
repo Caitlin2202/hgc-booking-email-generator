@@ -446,6 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                             classDay: selectedClass.classDay || '',
                                             classTime: selectedClass.classTime || '',
                                             duration: selectedClass.duration || '',
+                                            classMembership: selectedClass.classMembership || '',
+                                            tasterPrice: selectedClass.tasterPrice || '',
                                             venueName: selectedClass.venueName || '',
                                             fullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
                                         };
@@ -472,6 +474,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                         placeholderNewClassData.newClassDay = selectedClass.classDay || '',
                                         placeholderNewClassData.newClassTime = selectedClass.classTime || '',
                                         placeholderNewClassData.newDuration = selectedClass.duration || '',
+                                        placeholderNewClassData.newClassMembership = selectedClass.classMembership || '',
+                                        placeholderNewTasterPrice.newTasterPrice = selectedClass.tasterPrice || '',
                                         placeholderNewClassData.newVenueName = selectedClass.venueName || '',
                                         placeholderNewClassData.newFullAddress = selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '';
                                     };
@@ -610,6 +614,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{classDay}}/g, placeholderData.classDay)
                     .replace(/{{classTime}}/g, placeholderData.classTime)
                     .replace(/{{duration}}/g, placeholderData.duration)
+                    .replace(/{{classMembership}}/g, placeholderData.classMembership)
+                    .replace(/{{tasterPrice}}/g, placeholderData.tasterPrice)
                     .replace(/{{venueName}}/g, placeholderData.venueName)
                     .replace(/{{fullAddress}}/g, placeholderData.fullAddress);
             } else if (dataType === 'prev-class') {
@@ -628,6 +634,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{newClassDay}}/g, placeholderData.newClassDay)
                     .replace(/{{newClassTime}}/g, placeholderData.newClassTime)
                     .replace(/{{newDuration}}/g, placeholderData.newDuration)
+                    .replace(/{{classMembership}}/g, placeholderDate.newClassMembership)
+                    .replace(/{{newTasterPrice}}/g, placeholderData.newTasterPrice)
                     .replace(/{{newVenueName}}/g, placeholderData.newVenueName)
                     .replace(/{{newFullAddress}}/g, placeholderData.newFullAddress)
                     .replace(/{{classChangeDate}}/g, placeholderData.classChangeDate);
