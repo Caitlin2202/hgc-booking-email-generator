@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('classTimetable.json')
     .then(response => response.json()) // Parse JSON data
     .then(classes => {
-        let allClasses = classes.filter(c => c.active !== false); // Store all classes
+        let allClasses = classes.filter(c => c.active !== false); // Store all classes less any disabled classes
         // Call the function to populate the dropdown initially
         populateClassDropdown(allClasses);
 
@@ -43,14 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Function to update class list based on filters
-        function updateClassList(classes) {
+        function updateClassList(allClasses) {
             const selectedDay = document.getElementById('class-day').value;
             const selectedVenue = document.getElementById('venue').value;
             const selectedType = document.getElementById('class-type').value;
             const selectedAge = document.getElementById('class-age').value;
 
             // Filter classes based on user input
-            const filteredClasses = classes.filter(classItem => {
+            const filteredClasses = allClasses.filter(classItem => {
                 return (
                     (selectedDay === "" || classItem.classDay === selectedDay) &&
                     (selectedVenue === "" || classItem.venueName === selectedVenue) &&
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Function to populate the class dropdown
-        function populateClassDropdown(classes) {
+        function populateClassDropdown(allClasses) {
             classListContainers.forEach(container => {
                 container.innerHTML = '';
 
