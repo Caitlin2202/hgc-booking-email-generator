@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 defaultOption.selected = true;
                 container.appendChild(defaultOption);
 
-                if (classes.length === 0) {
+                if (allClasses.length === 0) {
                     const option = document.createElement('option');
                     option.value = '';
                     option.textContent = 'No classes found';
                     container.appendChild(option);
                 } else {
-                    classes.forEach(classItem => {
+                    allClasses.forEach(classItem => {
                         const option = document.createElement('option');
                         option.value = classItem.classCode; // Assuming each class has a unique classCode
                         option.textContent = `${classItem.className}, ${classItem.classType} ${classItem.classSubtype ? '(' + classItem.classSubtype + ')' : ''} ${classItem.classDay}, ${classItem.classTime} (${classItem.venueName})`;
@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof dateStr === 'string' && dateStr.trim().toLowerCase() === 'tbc') {
             return 'tbc';
         }
-        
+
         // If the date is in DD/MM/YYYY format (like "12/08/2024")
         if (dateStr.includes('/')) {
             const [day, month, year] = dateStr.split('/');
