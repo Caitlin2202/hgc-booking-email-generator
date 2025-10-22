@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         placeholderNewClassData.newClassTime = selectedClass.classTime || '',
                                         placeholderNewClassData.newDuration = selectedClass.duration || '',
                                         placeholderNewClassData.newClassMembership = selectedClass.classMembership || '',
-                                        placeholderNewTasterPrice.newTasterPrice = selectedClass.tasterPrice || '',
+                                        placeholderNewClassData.newTasterPrice = selectedClass.tasterPrice || '',
                                         placeholderNewClassData.newVenueName = selectedClass.venueName || '',
                                         placeholderNewClassData.newFullAddress = selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '';
                                     };
