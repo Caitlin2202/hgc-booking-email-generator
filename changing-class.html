@@ -5,73 +5,80 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2" style="background-color: #ffffff; padding: 0 20px; text-align: left;">
+        <td style="background-color: #ffffff; padding: 0 20px; text-align: left;">
             <h4>Hi [FirstName],</h4>
             <p>Thanks for booking with Hamilton Gymnastics Club. Your request to change classes has been processed. Please see your updated booking details below:</p>
-        <tr>
-            <td id="prevClassBookingDetails" style="padding: 20px; border-bottom: 1px solid #d5d5d5;">
-                <h3>Previous Class</h3>
-                <p id="prevClassType" style="margin: 0; font-weight: bold;">{{prevClassType}} Gymnastics Class</p>
-                <p id="prevClassNameAge" style="margin: 0; font-weight: bold;"><span id="prevClassName">{{prevClassName}}</span> <span id="prevClassAge">{{prevClassAge}}</span></p>
-                <p id="prevClassDayTime" style="margin-top: 0; font-weight: bold;"><span id="prevClassDay">{{prevClassDay}}</span> <span id="prevClassTime">{{prevClassTime}}</span></p>
-                <p id="prevVenueName" style="margin-top: 0; font-weight: bold">{{prevVenueName}}</p>
-            </td>
-            <td id="newClassBookingDetails" style="padding: 20px; border-bottom: 1px solid #d5d5d5;">
-                <h3>New Class</h3>
-                <p id="newClassType" style="margin: 0; font-weight: bold;">{{newClassType}} Gymnastics Class</p>
-                <p id="newClassNameAge" style="margin: 0; font-weight: bold;"><span id="newClassName">{{newClassName}}</span> <span id="newClassAge">{{newClassAge}}</span></p>
-                <p id="newClassDayTime" style="margin-top: 0; font-weight: bold;"><span id="newClassDay">{{newClassDay}}</span> <span id="newClassTime">{{newClassTime}}</span></p>
-                <p class="newVenuename" id="newClassVenue1" style="margin-top: 0; font-weight: bold">{{newVenueName}}</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px; vertical-align: top;">
-                <p id="bookedForStatement" style="font-weight: bold;">Booked for: [FullName]</p>
-                <p>Changing from: <span id="classChangeDate">{{classChangeDate}}</span></p>
-            </td>
-            <td style="padding: 20px; vertical-align: top;">
-                <!-- Location/Address -->
-                <p>New class location:</p>
-                <p><span class="newVenuename" id="newVenueName2" style="margin-top: 0; font-weight: bold">{{newVenueName}}</span><br>
-                    <span id="newFullAddress">{{newFullAddress}}</span>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 0 20px;">
-                <p>
-                    <table width="auto" cellspacing="0" cellpadding="0" border="0" style="display: inline-block; border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto; background-color: #ffffff; font-family: Arial, sans-serif;">
-                        <tr>
-                            <td colspan="2">
-                                <h3 style="text-align: center;">When You Arrive</h3>
-                                <p>When you arrive at the gym, you will see a scanner on the wall in front of you, just off to the right side. This is how you sign in and out of your classes.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <p>To scan in:
-                                    <ol>
-                                        <li>Open ClubRight on your phone</li>
-                                        <li>Check your child's name at the top of the screen, to make sure you're scanning the right code</li>
-                                        <li>Click the QR code to make it bigger</li>
-                                        <li>Hold your phone towards the scanner, with your screen facing the scanner until you hear a beep</li>
-                                        <li>Repeat the process at the end of class to scan out</li>
-                                    </ol>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr colspan="2">
-                            <td>
-                                <p>If someone else will be bringing your child to their class, you can send them a screenshot of the code to scan.</p>
-                                <p>If you're having trouble with the scanner, don't worry, we will do manual registers too. You can speak to a member of staff or a coach for assistance.</p>
-                            </td>
-                        </tr>
-                    </table>
-                </p>
-            </td>
-        </tr>
-        <tr>
-        <td colspan="2" style="padding: 0 20px; border-bottom: 1.5px solid #c5c5c5;">
+        </td>
+    </tr>
+    <tr>
+        <td id="prevClassBookingDetails" style="padding: 20px; border-bottom: 1px solid #d5d5d5;">
+            <h3>Previous Class</h3>
+            <p id="prevClassType" style="margin: 0; font-weight: bold;">{{prevClassType}} Gymnastics Class</p>
+            <p id="prevClassNameAge" style="margin: 0; font-weight: bold;"><span id="prevClassName">{{prevClassName}}</span> <span id="prevClassAge">{{prevClassAge}}</span></p>
+            <p id="prevClassDayTime" style="margin-top: 0; font-weight: bold;"><span id="prevClassDay">{{prevClassDay}}</span> <span id="prevClassTime">{{prevClassTime}}</span></p>
+            <p id="prevVenueName" style="margin-top: 0; font-weight: bold">{{prevVenueName}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td id="newClassBookingDetails" style="padding: 20px;">
+            <h3>New Class</h3>
+            <p id="newClassType" style="margin: 0; font-weight: bold;">{{newClassType}} Gymnastics Class</p>
+            <p id="newClassNameAge" style="margin: 0; font-weight: bold;"><span id="newClassName">{{newClassName}}</span> <span id="newClassAge">{{newClassAge}}</span></p>
+            <p id="newClassDayTime" style="margin-top: 0; font-weight: bold;"><span id="newClassDay">{{newClassDay}}</span> <span id="newClassTime">{{newClassTime}}</span></p>
+            <p class="newVenuename" id="newClassVenue1" style="margin-top: 0; font-weight: bold">{{newVenueName}}</p>
+            <p id="newClassMembership"><span style="font-weight: bold">{{newClassMembership}}</span><br>per month</p>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0 20px; vertical-align: top;">
+            <p><span id="bookedForStatement" style="font-weight: bold;">Booked for: [FullName]</span><br>
+             Changing from: <span id="classChangeDate">{{classChangeDate}}</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 20px; vertical-align: top; border-bottom: 1px solid #d5d5d5;">
+            <!-- Location/Address -->
+            <p>New class location:</p>
+            <p><span class="newVenuename" id="newVenueName2" style="margin-top: 0; font-weight: bold">{{newVenueName}}</span><br>
+                <span id="newFullAddress">{{newFullAddress}}</span>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 20px;">
+            <p>
+                <table width="auto" cellspacing="0" cellpadding="0" border="0" style="display: inline-block; border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto; background-color: #ffffff; font-family: Arial, sans-serif;">
+                    <tr>
+                        <td colspan="2">
+                            <h3 style="text-align: center;">When You Arrive</h3>
+                            <p>When you arrive at the gym, you will see a scanner on the wall in front of you, just off to the right side. This is how you sign in and out of your classes.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>To scan in:
+                                <ol>
+                                    <li>Open ClubRight on your phone</li>
+                                    <li>Check your child's name at the top of the screen, to make sure you're scanning the right code</li>
+                                    <li>Click the QR code to make it bigger</li>
+                                    <li>Hold your phone towards the scanner, with your screen facing the scanner until you hear a beep</li>
+                                    <li>Repeat the process at the end of class to scan out</li>
+                                </ol>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr colspan="2">
+                        <td>
+                            <p>If someone else will be bringing your child to their class, you can send them a screenshot of the code to scan.</p>
+                            <p>If you're having trouble with the scanner, don't worry, we will do manual registers too. You can speak to a member of staff or a coach for assistance.</p>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 20px; border-bottom: 1.5px solid #c5c5c5;">
             <p>
                 HGC Management Team<br>
                 <a href="mailto:hgcenquiry@gmail.com" style="text-decoration: none; color: inherit;">
@@ -81,7 +88,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2" style="background-color: #ffffff; padding: 20px; text-align: left;">
+        <td style="background-color: #ffffff; padding: 20px; text-align: left;">
             <h3 style="text-align: center;">Membership Plans</h3>
         <p>Hamilton Gymnastics Club class fees are covered by a cost effective monthly membership plan which conveniently spreads
             the cost of all regular weekly classes delivered throughout the year (excluding camps and any other pay as you go,

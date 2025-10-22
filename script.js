@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{newClassDay}}/g, placeholderData.newClassDay)
                     .replace(/{{newClassTime}}/g, placeholderData.newClassTime)
                     .replace(/{{newDuration}}/g, placeholderData.newDuration)
-                    .replace(/{{classMembership}}/g, placeholderData.newClassMembership)
+                    .replace(/{{newClassMembership}}/g, placeholderData.newClassMembership)
                     .replace(/{{newTasterPrice}}/g, placeholderData.newTasterPrice)
                     .replace(/{{newVenueName}}/g, placeholderData.newVenueName)
                     .replace(/{{newFullAddress}}/g, placeholderData.newFullAddress)
