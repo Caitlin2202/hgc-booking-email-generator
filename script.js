@@ -100,16 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('termDates.json')
     .then(response => response.json()) // Parse JSON data
     .then(terms => {
-        // Populate the dropdown with terms
-        populateTermDropdown(terms);
+        // Filter out archived terms
+        const visibleTerms = terms.filter(term => !term.archive);
+
+        // Populate dropdown with visible terms
+        populateTermDropdown(visibleTerms);
     })
     .catch(error => {
         console.error('Error loading term data:', error);
     });
 
     // Function to populate the term dropdown
-    function populateTermDropdown(terms) {
+    function populateTermDropdown(visibleTerms) {
         termListContainer.innerHTML = ''; // Clear previous options
+
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
         defaultOption.textContent = '--Select a term--';
@@ -117,12 +121,22 @@ document.addEventListener('DOMContentLoaded', () => {
         defaultOption.selected = true;
         termListContainer.appendChild(defaultOption);
 
-        terms.forEach(term => {
+        visibleTerms.forEach(term => {
             const option = document.createElement('option');
-            option.value = term.termName; // You can use termName or another unique identifier
+            option.value = term.termName; // Unique identifier for each term
+
             const formattedStartDate = formatDate(term.startDate);
             const formattedEndDate = formatDate(term.endDate);
+
+            // Build display text for dropdown list
             option.textContent = `${term.termName} (${formattedStartDate} - ${formattedEndDate})`;
+            
+            // Apply active/archive rules
+            if (term.active === false) {
+                option.disabled = true; // show option but not selectable
+                option.textContent += ' (Inactive)';
+            }
+            
             termListContainer.appendChild(option);
         });
     }

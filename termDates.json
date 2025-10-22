@@ -7,7 +7,9 @@
     "offDates": [
       "15/02/2025-16/02/2024",
       "08/03/2025"
-    ]
+    ],
+    "active": false,
+    "archive": true
   },
   {
     "year": 2025,
@@ -16,7 +18,9 @@
     "endDate": "29/06/2025",
     "offDates": [
       "21/06/2025-22/06/2025"
-    ]
+    ],
+    "active": false,
+    "archive": false
   },
   {
     "year": 2025,
@@ -27,6 +31,41 @@
       "13/10/2025-17/10/2025",
       "29/11/2025-30/11/2025",
       "05/12/2025-07/12/2025"
-    ]
+    ],
+    "active": true,
+    "archive": false
+  },
+  {
+    "year": 2026,
+    "termName": "Winter 2026",
+    "startDate": "tbc",
+    "endDate": "tbc",
+    "offDates": [
+      "tbc"
+    ],
+    "active": false,
+    "archive": false
+  },
+  {
+    "year": 2026,
+    "termName": "Spring-Summer 2026",
+    "startDate": "tbc",
+    "endDate": "tbc",
+    "offDates": [
+      "tbc"
+    ],
+    "active": true,
+    "archive": false
+  },
+  {
+    "year": 2026,
+    "termName": "Autumn-Winter 2026",
+    "startDate": "tbc",
+    "endDate": "tbc",
+    "offDates": [
+      "tbc"
+    ],
+    "active": true,
+    "archive": false
   }
 ]
