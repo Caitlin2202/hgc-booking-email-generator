@@ -464,6 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     
                                         placeholderClassData = {
                                             classType: selectedClass.classType || '',
+                                            classSubtype: selectedClass.classSubtype || '',
                                             className: selectedClass.className || '',
                                             classAge: selectedClass.classAge || '',
                                             classDay: selectedClass.classDay || '',
@@ -478,6 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                         placeholderPrevClassData = {
                                             prevClassType: selectedClass.classType || '',
+                                            prevClassSubtype: selectedClass.classSubtype || '',
                                             prevClassName: selectedClass.className || '',
                                             prevClassAge: selectedClass.classAge || '',
                                             prevClassDay: selectedClass.classDay || '',
@@ -491,8 +493,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                         if(!placeholderNewClassData) {
                                             placeholderNewClassData = {}
                                         };
-                                        placeholderNewClassData.newClassType = selectedClass.classType || ''
-                                        placeholderNewClassData.newClassName = selectedClass.className || ''
+                                        placeholderNewClassData.newClassType = selectedClass.classType || '',
+                                        placeholderNewClassData.newClassSubtype = selectedClass.classSubtype || '',
+                                        placeholderNewClassData.newClassName = selectedClass.className || '',
                                         placeholderNewClassData.newClassAge = selectedClass.classAge || '',
                                         placeholderNewClassData.newClassDay = selectedClass.classDay || '',
                                         placeholderNewClassData.newClassTime = selectedClass.classTime || '',
@@ -632,6 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return templateContent
             } else if (dataType === 'class') {
                 return templateContent.replace(/{{classType}}/g, placeholderData.classType)
+                    .replace(/{{classSubtype}}/g, placeholderData.classSubtype)
                     .replace(/{{className}}/g, placeholderData.className)
                     .replace(/{{classAge}}/g, placeholderData.classAge)
                     .replace(/{{classDay}}/g, placeholderData.classDay)
@@ -643,6 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{fullAddress}}/g, placeholderData.fullAddress);
             } else if (dataType === 'prev-class') {
                 return templateContent.replace(/{{prevClassType}}/g, placeholderData.prevClassType)
+                    .replace(/{{prevClassSubtype}}/g, placeholderData.prevClassSubtype)
                     .replace(/{{prevClassName}}/g, placeholderData.prevClassName)
                     .replace(/{{prevClassAge}}/g, placeholderData.prevClassAge)
                     .replace(/{{prevClassDay}}/g, placeholderData.prevClassDay)
@@ -652,6 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{prevFullAddress}}/g, placeholderData.prevFullAddress);
             } else if (dataType === 'new-class') {
                 return templateContent.replace(/{{newClassType}}/g, placeholderData.newClassType)
+                    .replace(/{{newClassSubtype}}/g, placeholderData.newClassSubtype)
                     .replace(/{{newClassName}}/g, placeholderData.newClassName)
                     .replace(/{{newClassAge}}/g, placeholderData.newClassAge)
                     .replace(/{{newClassDay}}/g, placeholderData.newClassDay)
