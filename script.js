@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const allPickers = [];
+
+    document.querySelectorAll('.date-input').forEach(input => {
+        const picker = flatpickr(input, {
+            dateFormat: "d-m-Y",
+            locale: { firstDayOfWeek: 1 },
+            minDate: "today"
+        });
+
+        allPickers.push(picker);
+    });
+
     flatpickr("#booking-start-date", {
         dateFormat: "Y-m-d", // Format: Year-Month-Day
         defaultDate: "today", // Default to today's date
@@ -12,11 +24,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const advTrialDatePicker = flatpickr("#trial-class-date", {
+        dateFormat: "d-m-Y", // Format: Day-Month-Year
+        defaultDate: "today", // Default to today's date
+        minDate: "today", // Prevent selecting past dates
+        disable: ["2025-01-01"], // Example: Disable specific dates
+        locale: {
+            firstDayOfWeek: 1 // Set Monday as the first day of the week
+        },
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length > 0) {
+                const selectedDate = selectedDates[0];
+                const maxDeadlineDate = new Date(selectedDate);
+                maxDeadlineDate.setDate(selectedDate.getDate() - 3); // -3 days
+
+                // Update the minDate of the confirmation deadline picker
+                advTrialDeadlineDatePicker.set("maxDate", maxDeadlineDate);
+
+                console.log("Trial class selected:", selectedDate);
+                console.log("Deadline must be after:", maxDeadlineDate);
+            }
+            console.log("Selected Date: ", dateStr); // For debugging
+        }
+    });
+
+    const advTrialDeadlineDatePicker = flatpickr("#trial-confirmation-deadline", {
+        dateFormat: "d-m-Y", // Format: Day-Month-Year
+        defaultDate: "today", // Default to today's date
+        minDate: "today", // Prevent selecting past dates
+        disable: [
+            "2025-01-01",
+            function(date) {
+            // Return true to disable the date
+            const day = date.getDay(); // 0 = Sunday, 6 = Saturday
+            return day === 0 || day === 6; // disable weekends
+        }
+        ], // Example: Disable specific dates
+        locale: {
+            firstDayOfWeek: 1 // Set Monday as the first day of the week
+        },
+        onChange: function(selectedDates, dateStr, instance) {
+            console.log("Selected Date: ", dateStr); // For debugging
+        }
+    });
+
     const classFilters = document.querySelectorAll('.class-filter');
     const classListContainers = document.querySelectorAll('.class-select');
     const classChangePrevContainer = document.getElementById('prev-class-booked');
     const classChangeNewContainer = document.getElementById('new-class-booked');
     const termListContainer = document.getElementById('term-booked');
+    const templateSelector = document.getElementById('email-template');
 
     // Fetch class data from classTimetable.json
     fetch('classTimetable.json')
@@ -31,6 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('venue').addEventListener('change', () => updateClassList(allClasses));
         document.getElementById('class-type').addEventListener('change', () => updateClassList(allClasses));
         document.getElementById('class-age').addEventListener('change', () => updateClassList(allClasses));
+
+
+        // Event listener for email template change
+        templateSelector.addEventListener('change', () => updateClassList(allClasses));
 
         // Event listeners for class selection dropdowns
         classChangePrevContainer.addEventListener('change', () => {
@@ -49,9 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedVenue = document.getElementById('venue').value;
             const selectedType = document.getElementById('class-type').value;
             const selectedAge = document.getElementById('class-age').value;
+            const selectedTemplate = templateSelector.value;
 
             // Filter classes based on user input
-            const filteredClasses = allClasses.filter(classItem => {
+            let filteredClasses = allClasses.filter(classItem => {
                 return (
                     (selectedDay === "" || classItem.classDay === selectedDay) &&
                     (selectedVenue === "" || classItem.venueName === selectedVenue) &&
@@ -59,6 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     (selectedAge === "" || classItem.className === selectedAge)
                 );
             });
+
+            // If template is 'adv-rec-trial', filter for Advanced Rec classes only
+            if (selectedTemplate === 'adv-rec-trial-invite' || selectedTemplate === 'adv-rec-trial-conf') {
+                filteredClasses = filteredClasses.filter(c => c.classType === 'Advanced Recreational');
+            }
 
             // Populate dropdown with filtered classes
             populateClassDropdown(filteredClasses);
@@ -141,16 +208,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    const templateSelector = document.getElementById('email-template');
     const generalEmailsForm = document.getElementById('general-emails-form-container');
-    const bookingEmailsForm = document.getElementById('booking-emails-form-container');
-    const changingClassForm = document.getElementById('changing-class-form-container');
-    const classFiltersContainer = document.getElementById('class-filters-container');
+    const recBookingEmailsForm = document.getElementById('rec-booking-emails-form-container');
+    const newBookingsForm = document.getElementById('new-bookings-form-container'); // Inside recBookingEmailsForm
+    const changingClassForm = document.getElementById('changing-class-form-container'); // Inside recBookingEmailsForm
+    const advRecTrialForm = document.getElementById('trial-invitation-email-form-container'); // Inside recBookingEmailsForm
+    const classFiltersContainer = document.getElementById('class-filters-container'); // Inside recBookingEmailsForm
+    const termSelectionForm = document.getElementById('term-select-container'); // Inside newBookingsForm
 
     // Function to hide all email form fields
     function hideAllFields() {
-        const allFormContainers = [generalEmailsForm, bookingEmailsForm, changingClassForm, classFiltersContainer];
+        const allFormContainers = [generalEmailsForm, recBookingEmailsForm, newBookingsForm, termSelectionForm, advRecTrialForm, changingClassForm, classFiltersContainer, termSelectionForm];
         allFormContainers.forEach(formContainer => {
             formContainer.style.display = 'none';
             const fields = formContainer.querySelectorAll('select, input, textarea');
@@ -163,14 +231,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to show specific email form fields
-    function showFields(formContainer) {
-        formContainer.style.display = 'block';
+    function showFields(...formContainers) {
+        formContainers.forEach(formContainer => {
+            formContainer.style.display = 'block';
 
-        const fields = formContainer.querySelectorAll('input, select, textarea');
-        fields.forEach(field => {
-            field.disabled = false;
-            field.required = true;
-            field.value = '';
+            const fields = formContainer.querySelectorAll('input, select, textarea');
+            fields.forEach(field => {
+                field.disabled = false;
+                field.required = true;
+                field.value = '';
+            });
         });
     }
 
@@ -178,6 +248,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const termSelector = document.getElementById('term-booked');
     const bookingStartDateInput = document.getElementById('booking-start-date');
     const classChangeDateInput = document.getElementById('class-change-start-date');
+    const trialStartDateInput = document.getElementById('trial-class-date');
+    const trialConfirmationDeadlineInput = document.getElementById('trial-confirmation-deadline');
     const generalMessageTitleInput = document.getElementById('messageTitle');
     const generalMessageContentInput = document.getElementById('messageContent');
     const generalMessageEmployeeName = document.getElementById('employeeName');
@@ -196,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let placeholderTermData = null;  // store the term data
     let placeholderBookingData = null; // store the booking data
 
+    // Trial details placeholders
+    let placeholderTrialData = null; // store the trial data
+
     // Generate email based on template selected
     templateSelector.addEventListener('change', () => {
         const selectedTemplate = templateSelector.value;
@@ -210,6 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
         termSelector.value = '';
         bookingStartDateInput.value = '';
         classChangeDateInput.value = '';
+        trialStartDateInput.value = '';
+        trialConfirmationDeadlineInput.value = '';
 
         // Reset the placeholders to empty (no previously selected values)
         placeholderGeneralMessageTitle = {};
@@ -221,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         placeholderNewClassData = {};
         placeholderTermData = {};
         placeholderBookingData = {};
+        placeholderTrialData = {};
 
         // Hide all form fields before showing the relevant ones
         hideAllFields();
@@ -262,9 +340,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (selectedTemplate === 'general-email') {
                         showFields(generalEmailsForm);
                     } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol') {
-                        showFields(bookingEmailsForm, classFiltersContainer);
+                        showFields(recBookingEmailsForm, newBookingsForm, termSelectionForm);
                     } else if (selectedTemplate === 'changing-class') {
-                        showFields(changingClassForm, classFiltersContainer);
+                        showFields(recBookingEmailsForm, changingClassForm);
+                    } else if (selectedTemplate === 'adv-rec-trial-invite') {
+                        showFields(advRecTrialForm);
+                    } else if (selectedTemplate === 'adv-rec-trial-conf') {
+                        showFields(recBookingEmailsForm, newBookingsForm);
                     }
                 })
                 .catch(error => {
@@ -472,6 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                             duration: selectedClass.duration || '',
                                             classMembership: selectedClass.classMembership || '',
                                             tasterPrice: selectedClass.tasterPrice || '',
+                                            trialPrice: selectedClass.trialPrice || '',
                                             venueName: selectedClass.venueName || '',
                                             fullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
                                         };
@@ -643,6 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{duration}}/g, placeholderData.duration)
                     .replace(/{{classMembership}}/g, placeholderData.classMembership)
                     .replace(/{{tasterPrice}}/g, placeholderData.tasterPrice)
+                    .replace(/{{trialPrice}}/g, placeholderData.trialPrice)
                     .replace(/{{venueName}}/g, placeholderData.venueName)
                     .replace(/{{fullAddress}}/g, placeholderData.fullAddress);
             } else if (dataType === 'prev-class') {
