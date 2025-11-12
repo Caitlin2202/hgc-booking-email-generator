@@ -21,15 +21,17 @@
                                 <option value="general-email">General message (text only)</option>
                             </optgroup>
                             <optgroup label="Rec Booking Emails" id="templates-rec-booking">
-                                <optgroup label="--Booking Confirmations">
+                                <optgroup label="--Taster & Trial Booking Confirmations">
                                     <option value="taster">Taster class</option>
+                                    <option value="adv-rec-trial-conf">Advanced Rec trial booking confirmation (inactive)</option>
+                                </optgroup>
+                                <optgroup label="--Booking Confirmations">
                                     <option value="new-member">New member</option>
                                     <option value="auto-enrol">Auto-enrolment (current members)</option>
                                     <option value="changing-class">Changing classes</option>
-                                    <option value="adv-rec-trial-conf">Advanced Rec trial booking confirmation (inactive)</option>
                                 </optgroup>
                                 <optgroup label="--Invitation Emails (inactive)">
-                                    <option disabled value="adv-rec-trial-invite">Advanced Rec trial invitation (inactive)</option>
+                                    <option value="adv-rec-trial-invite">Advanced Rec trial invitation (inactive)</option>
                                 </optgroup>
                             </optgroup>
                         </select>
@@ -162,7 +164,7 @@
                         </div>
                     </div>
                     <div id="trial-invitation-email-form-container" style="display: none;">
-                        <div class="field-wrapper trial-invitation-field">
+                        <div class="field-wrapper trial-invitation-field trial-booking-field">
                             <label for="trial-class">Trial class:</label>
                             <select class="class-select" required id="trial-class-offered" name="trial-class-offered">
                                 <option value="" disabled>--Select a class--</option>
@@ -171,12 +173,12 @@
                             <p>Which class is the member trialling for?</p>
                             <p id="trial-class-selected">Selection: None</p>
                         </div>
-                        <div class="field-wrapper trial-invitation-field">
+                        <div class="field-wrapper trial-invitation-field trial-booking-field">
                             <label for="trial-class-date">Trial date:</label>
                             <input type="date" class="date-input booking-input" required id="trial-class-date" name="trial-class-date">
                             <p>What date will the member trial for the new class?</p>
                         </div>
-                        <div class="field-wrapper trial-invitation-field">
+                        <div class="field-wrapper trial-invitation-field" id="trial-deadline-container" style="display: none">
                             <label for="trial-confirmation-deadline">Deadline to confirm:</label>
                             <input type="date" class="date-input" required id="trial-confirmation-deadline" name="trial-confirmation-deadline">
                             <p>What date should the member confirm their attendance by?</p>

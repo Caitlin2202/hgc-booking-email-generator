@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.date-input').forEach(input => {
         const picker = flatpickr(input, {
-            dateFormat: "d-m-Y",
+            dateFormat: "Y-m-d",
             locale: { firstDayOfWeek: 1 },
             minDate: "today"
         });
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const advTrialDatePicker = flatpickr("#trial-class-date", {
-        dateFormat: "d-m-Y", // Format: Day-Month-Year
+        dateFormat: "Y-m-d", // Format: Day-Month-Year
         defaultDate: "today", // Default to today's date
         minDate: "today", // Prevent selecting past dates
         disable: ["2025-01-01"], // Example: Disable specific dates
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const advTrialDeadlineDatePicker = flatpickr("#trial-confirmation-deadline", {
-        dateFormat: "d-m-Y", // Format: Day-Month-Year
+        dateFormat: "Y-m-d", // Format: Day-Month-Year
         defaultDate: "today", // Default to today's date
         minDate: "today", // Prevent selecting past dates
         disable: [
@@ -215,10 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const advRecTrialForm = document.getElementById('trial-invitation-email-form-container'); // Inside recBookingEmailsForm
     const classFiltersContainer = document.getElementById('class-filters-container'); // Inside recBookingEmailsForm
     const termSelectionForm = document.getElementById('term-select-container'); // Inside newBookingsForm
+    const trialDeadlineForm = document.getElementById('trial-deadline-container'); // Inside advRecTrialForm
 
     // Function to hide all email form fields
     function hideAllFields() {
-        const allFormContainers = [generalEmailsForm, recBookingEmailsForm, newBookingsForm, termSelectionForm, advRecTrialForm, changingClassForm, classFiltersContainer, termSelectionForm];
+        const allFormContainers = [generalEmailsForm, recBookingEmailsForm, newBookingsForm, termSelectionForm, advRecTrialForm, changingClassForm, classFiltersContainer, termSelectionForm, trialDeadlineForm];
         allFormContainers.forEach(formContainer => {
             formContainer.style.display = 'none';
             const fields = formContainer.querySelectorAll('select, input, textarea');
@@ -344,9 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else if (selectedTemplate === 'changing-class') {
                         showFields(recBookingEmailsForm, changingClassForm);
                     } else if (selectedTemplate === 'adv-rec-trial-invite') {
-                        showFields(advRecTrialForm);
+                        showFields(advRecTrialForm, trialDeadlineForm);
                     } else if (selectedTemplate === 'adv-rec-trial-conf') {
-                        showFields(recBookingEmailsForm, newBookingsForm);
+                        showFields(advRecTrialForm);
                     }
                 })
                 .catch(error => {
@@ -376,7 +377,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     generalMessageEmployeeName.addEventListener('input', () => {
@@ -395,7 +398,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     const signatureMap = {
@@ -420,7 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     generalMessageContentInput.addEventListener('input', () => {
@@ -447,7 +454,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     bookingStartDateInput.addEventListener('change', () => {
@@ -466,7 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     classChangeDateInput.addEventListener('change', () => {
@@ -488,7 +499,57 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData)
+            placeholderBookingData,
+            placeholderTrialData
+        )
+    })
+
+    trialStartDateInput.addEventListener('change', () => {
+        const trialStartDate = trialStartDateInput.value;
+        const formattedTrialStartDate = formatDate(trialStartDate);
+
+        if (!placeholderTrialData) {
+            placeholderTrialData = {};
+        }
+
+        placeholderTrialData.trialStartDate = formattedTrialStartDate;
+
+        updateEmailTemplate(
+            placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
+            placeholderGeneralMessageSignature,
+            placeholderGeneralMessageContent,
+            placeholderClassData,
+            placeholderPrevClassData,
+            placeholderNewClassData,
+            placeholderTermData,
+            placeholderBookingData,
+            placeholderTrialData
+        )
+    })
+
+    trialConfirmationDeadlineInput.addEventListener('change', () => {
+        const trialConfirmationDeadline = trialConfirmationDeadlineInput.value;
+        const formattedTrialConfirmationDeadline = formatDate(trialConfirmationDeadline);
+
+        if (!placeholderTrialData) {
+            placeholderTrialData = {};
+        }
+
+        placeholderTrialData.trialConfirmationDeadline = formattedTrialConfirmationDeadline;
+
+        updateEmailTemplate(
+            placeholderGeneralMessageTitle,
+            placeholderGeneralMessageEmployeeName,
+            placeholderGeneralMessageSignature,
+            placeholderGeneralMessageContent,
+            placeholderClassData,
+            placeholderPrevClassData,
+            placeholderNewClassData,
+            placeholderTermData,
+            placeholderBookingData,
+            placeholderTrialData
+        )
     })
 
     // Combined function to format both date strings (DD/MM/YYYY) and ISO date strings (YYYY-MM-DD)
@@ -587,6 +648,20 @@ document.addEventListener('DOMContentLoaded', () => {
                                         placeholderNewClassData.newTasterPrice = selectedClass.tasterPrice || '',
                                         placeholderNewClassData.newVenueName = selectedClass.venueName || '',
                                         placeholderNewClassData.newFullAddress = selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '';
+                                    } else if (container.id === 'trial-class-offered') {
+                                        placeholderTrialData = {
+                                            trialClassType: selectedClass.classType || '',
+                                            trialClassName: selectedClass.className || '',
+                                            trialClassAge: selectedClass.classAge || '',
+                                            trialClassSchoolAge: selectedClass.classSchoolAge || '',
+                                            trialClassDay: selectedClass.classDay || '',
+                                            trialClassTime: selectedClass.classTime || '',
+                                            trialClassDuration: selectedClass.duration || '',
+                                            trialClassMembership: selectedClass.classMembership || '',
+                                            trialClassTrialPrice: selectedClass.trialPrice || '',
+                                            trialClassVenueName: selectedClass.venueName || '',
+                                            trialClassFullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
+                                        }
                                     };
 
                                     updateEmailTemplate(
@@ -598,7 +673,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                         placeholderPrevClassData,
                                         placeholderNewClassData,
                                         placeholderTermData,
-                                        placeholderBookingData);
+                                        placeholderBookingData,
+                                        placeholderTrialData
+                                    );
                                 })
                                 .catch(error => console.error('Error loading venue data:', error));
                         }
@@ -633,7 +710,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             placeholderPrevClassData,
                             placeholderNewClassData,
                             placeholderTermData,
-                            placeholderBookingData);
+                            placeholderBookingData,
+                            placeholderTrialData
+                        );
                     }
                 } else {
                     console.error('allTerms is not an array or selectedTermName is invalid');
@@ -652,7 +731,8 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholderPrevClassData,
             placeholderNewClassData,
             placeholderTermData,
-            placeholderBookingData) {
+            placeholderBookingData,
+            placeholderTrialData) {
             const selectedTemplate = templateSelector.value;
             const templateFile = `${selectedTemplate}.html`;
 
@@ -693,6 +773,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     if (placeholderBookingData) {
                         updatedTemplateContent = replacePlaceholders (updatedTemplateContent, placeholderBookingData, 'booking');
+                    }
+                    if (placeholderTrialData) {
+                        updatedTemplateContent = replacePlaceholders (updatedTemplateContent, placeholderTrialData, 'adv-trial');
                     }
 
                     // Render the updated template
@@ -762,6 +845,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{offDates}}/g, offDatesFormatted);
             } else if (dataType === 'booking') {
                 return templateContent.replace(/{{bookingStartDate}}/g, placeholderData.bookingStartDate);
+            } else if (dataType === 'adv-trial') {
+                return templateContent.replace(/{{trialStartDate}}/g, placeholderData.trialStartDate)
+                .replace(/{{trialConfirmationDeadline}}/g, placeholderData.trialConfirmationDeadline)
+                .replace(/{{trialClassType}}/g, placeholderData.trialClassType)
+                .replace(/{{trialClassSubtype}}/g, placeholderData.trialClassSubtype)
+                .replace(/{{trialClassName}}/g, placeholderData.trialClassName)
+                .replace(/{{trialClassAge}}/g, placeholderData.trialClassAge)
+                .replace(/{{trialClassSchoolAge}}/g, placeholderData.trialClassSchoolAge)
+                .replace(/{{trialClassDay}}/g, placeholderData.trialClassDay)
+                .replace(/{{trialClassTime}}/g, placeholderData.trialClassTime)
+                .replace(/{{trialClassDuration}}/g, placeholderData.trialClassDuration)
+                .replace(/{{trialClassMembership}}/g, placeholderData.trialClassMembership)
+                .replace(/{{trialClassTrialPrice}}/g, placeholderData.trialClassTrialPrice)
+                .replace(/{{trialClassVenueName}}/g, placeholderData.trialClassVenueName)
+                .replace(/{{trialClassFullAddress}}/g, placeholderData.trialClassFullAddress);
             }
             return templateContent; // Return unchanged template if no valid data type
         }
