@@ -20,7 +20,7 @@
       "21/06/2025-22/06/2025"
     ],
     "active": false,
-    "archive": false
+    "archive": true
   },
   {
     "year": 2025,
@@ -38,10 +38,24 @@
   {
     "year": 2026,
     "termName": "Winter 2026",
-    "startDate": "tbc",
-    "endDate": "tbc",
+    "startDate": "2026-01-05",
+    "endDate": "2026-04-02",
     "offDates": [
-      "tbc"
+      {
+        "startDate": "2026-02-14",
+        "endDate": "2026-02-15",
+        "reason": "Club Event"
+      },
+      {
+        "startDate": "2026-03-07",
+        "endDate": "2026-03-07",
+        "reason": "Recreational Competition"
+      },
+      {
+        "startDate": "2026-04-03",
+        "endDate": "2026-04-10",
+        "reason": "Easter Break"
+      }
     ],
     "active": false,
     "archive": false
