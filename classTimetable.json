@@ -1,6 +1,6 @@
 [
   {
-    "venueName": "Eddlewood",
+    "venueName": "Blantyre",
     "classType": "ASN",
     "classDay": "Saturday",
     "classTime": "9:15 AM",
@@ -456,7 +456,7 @@
     "classCode": "TU1145PSGBU4",
     "classMembership": "£28.75",
     "tasterPrice": "£9.50",
-    "active": true
+    "active": false
   },
   {
     "venueName": "Blantyre",
@@ -937,7 +937,7 @@
     "classCode": "FR200PSGBU4",
     "classMembership": "£28.75",
     "tasterPrice": "£9.50",
-    "active": true
+    "active": false
   },
   {
     "venueName": "Blantyre",
