@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideAllFields();
 
         // Ensure class filters stay visible for the appropriate templates
-        if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol' || selectedTemplate === 'changing-class') {
+        if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking-new-member' || selectedTemplate === 'new-booking-current-member' || selectedTemplate === 'auto-enrol' || selectedTemplate === 'changing-class') {
             showFields(classFiltersContainer);  // Keep class filters visible when needed
         }
 
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Show the relevant form fields based on the template selected
                     if (selectedTemplate === 'general-email') {
                         showFields(generalEmailsForm);
-                    } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-member' || selectedTemplate === 'auto-enrol') {
+                    } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking-new-member' || selectedTemplate === 'new-booking-current-member' || selectedTemplate === 'auto-enrol') {
                         showFields(recBookingEmailsForm, newBookingsForm, termSelectionForm);
                     } else if (selectedTemplate === 'changing-class') {
                         showFields(recBookingEmailsForm, changingClassForm);
@@ -613,7 +613,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                             classDay: selectedClass.classDay || '',
                                             classTime: selectedClass.classTime || '',
                                             duration: selectedClass.duration || '',
-                                            classMembership: selectedClass.classMembership || '',
+                                            classMembership2025: selectedClass.classMembership2025 || '',
+                                            classMembership2026: selectedClass.classMembership2026 || '',
                                             tasterPrice: selectedClass.tasterPrice || '',
                                             trialPrice: selectedClass.trialPrice || '',
                                             venueName: selectedClass.venueName || '',
@@ -644,7 +645,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                         placeholderNewClassData.newClassDay = selectedClass.classDay || '',
                                         placeholderNewClassData.newClassTime = selectedClass.classTime || '',
                                         placeholderNewClassData.newDuration = selectedClass.duration || '',
-                                        placeholderNewClassData.newClassMembership = selectedClass.classMembership || '',
+                                        placeholderNewClassData.newClassMembership2025 = selectedClass.classMembership2025 || '',
+                                        placeholderNewClassData.newClassMembership2026 = selectedClass.classMembership2026 || '',
                                         placeholderNewClassData.newTasterPrice = selectedClass.tasterPrice || '',
                                         placeholderNewClassData.newVenueName = selectedClass.venueName || '',
                                         placeholderNewClassData.newFullAddress = selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '';
@@ -657,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                             trialClassDay: selectedClass.classDay || '',
                                             trialClassTime: selectedClass.classTime || '',
                                             trialClassDuration: selectedClass.duration || '',
-                                            trialClassMembership: selectedClass.classMembership || '',
+                                            trialClassMembership2026: selectedClass.classMembership2026 || '',
                                             trialClassTrialPrice: selectedClass.trialPrice || '',
                                             trialClassVenueName: selectedClass.venueName || '',
                                             trialClassFullAddress: selectedVenue ? [selectedVenue.venueAddressLine1, selectedVenue.venueAddressLine2, selectedVenue.venueAddressLine3, selectedVenue.venueCityTown, selectedVenue.venuePostcode].filter(Boolean).join('<br>') : '',
@@ -807,7 +809,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{classDay}}/g, placeholderData.classDay)
                     .replace(/{{classTime}}/g, placeholderData.classTime)
                     .replace(/{{duration}}/g, placeholderData.duration)
-                    .replace(/{{classMembership}}/g, placeholderData.classMembership)
+                    .replace(/{{classMembership2025}}/g, placeholderData.classMembership2025)
+                    .replace(/{{classMembership2026}}/g, placeholderData.classMembership2026)
                     .replace(/{{tasterPrice}}/g, placeholderData.tasterPrice)
                     .replace(/{{trialPrice}}/g, placeholderData.trialPrice)
                     .replace(/{{venueName}}/g, placeholderData.venueName)
@@ -830,7 +833,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     .replace(/{{newClassDay}}/g, placeholderData.newClassDay)
                     .replace(/{{newClassTime}}/g, placeholderData.newClassTime)
                     .replace(/{{newDuration}}/g, placeholderData.newDuration)
-                    .replace(/{{newClassMembership}}/g, placeholderData.newClassMembership)
+                    .replace(/{{newClassMembership2025}}/g, placeholderData.newClassMembership2025)
+                    .replace(/{{newClassMembership2026}}/g, placeholderData.newClassMembership2026)
                     .replace(/{{newTasterPrice}}/g, placeholderData.newTasterPrice)
                     .replace(/{{newVenueName}}/g, placeholderData.newVenueName)
                     .replace(/{{newFullAddress}}/g, placeholderData.newFullAddress)
@@ -856,7 +860,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .replace(/{{trialClassDay}}/g, placeholderData.trialClassDay)
                 .replace(/{{trialClassTime}}/g, placeholderData.trialClassTime)
                 .replace(/{{trialClassDuration}}/g, placeholderData.trialClassDuration)
-                .replace(/{{trialClassMembership}}/g, placeholderData.trialClassMembership)
+                .replace(/{{trialClassMembership2026}}/g, placeholderData.trialClassMembership2026)
                 .replace(/{{trialClassTrialPrice}}/g, placeholderData.trialClassTrialPrice)
                 .replace(/{{trialClassVenueName}}/g, placeholderData.trialClassVenueName)
                 .replace(/{{trialClassFullAddress}}/g, placeholderData.trialClassFullAddress);

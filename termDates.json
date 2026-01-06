@@ -32,8 +32,8 @@
       "29/11/2025-30/11/2025",
       "05/12/2025-07/12/2025"
     ],
-    "active": true,
-    "archive": false
+    "active": false,
+    "archive": true
   },
   {
     "year": 2026,
@@ -51,10 +51,11 @@
   {
     "year": 2026,
     "termName": "Spring-Summer 2026",
-    "startDate": "tbc",
-    "endDate": "tbc",
+    "startDate": "11/04/2026",
+    "endDate": "05/07/2026",
     "offDates": [
-      "tbc"
+      "22/05/2026-25/05/2026",
+      "20/06/2026-21/06/2026"
     ],
     "active": false,
     "archive": false
@@ -62,10 +63,11 @@
   {
     "year": 2026,
     "termName": "Autumn-Winter 2026",
-    "startDate": "tbc",
-    "endDate": "tbc",
+    "startDate": "14/08/2026",
+    "endDate": "20/12/2026",
     "offDates": [
-      "tbc"
+      "12/10/2026-16/10/2026",
+      "04/12/2026-06/12/2026"
     ],
     "active": false,
     "archive": false
