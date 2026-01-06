@@ -10,7 +10,8 @@
     </head>
     <body>
         <div class="container">
-            <div class="form-container">
+            <h2>The email generator is being updated. Please check back later :)</h2>
+            <div style="visibility: hidden;" class="form-container">
                 <form id="emailTemplateForm">
                     <div class="field-wrapper">
                         <label for="email-template">Email template:</label>
@@ -26,8 +27,9 @@
                                     <option value="adv-rec-trial-conf">Advanced Rec trial booking confirmation</option>
                                 </optgroup>
                                 <optgroup label="--Booking Confirmations (All Classes)">
-                                    <option value="new-member">New member</option>
-                                    <option value="auto-enrol">Auto-enrolment (current members)</option>
+                                    <option value="new-booking-new-member">New booking (new member, new prices)</option>
+                                    <option value="new-booking-current-member">New booking (current member, old prices)</option>
+                                    <option disabled value="auto-enrol">Auto-enrolment (current members)</option>
                                     <option value="changing-class">Changing classes</option>
                                 </optgroup>
                                 <optgroup label="--Invitation Emails">
@@ -199,7 +201,7 @@
                     </div>-->
                 </form>
             </div>
-            <div id="emailTemplatePreview">
+            <div style="visibility: hidden;" id="emailTemplatePreview">
                 <h3>Email Preview</h3>
                 <div id="emailTemplate">
                     <table id="emailHeader" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; border-collapse: collapse; max-width: 600px; margin: 0 auto;">
