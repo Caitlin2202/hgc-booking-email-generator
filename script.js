@@ -15,7 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
         dateFormat: "Y-m-d", // Format: Year-Month-Day
         defaultDate: "today", // Default to today's date
         minDate: "2025-01-06", // Prevent selecting past dates
-        disable: ["2025-01-01"], // Example: Disable specific dates
+        disable: [
+            "2026-02-14",
+            "2026-02-15",
+            "2026-03-07",
+            {
+                from: "2026-04-03",
+                to: "2026-04-10"
+            }
+        ],
         locale: {
             firstDayOfWeek: 1 // Set Monday as the first day of the week
         },
@@ -28,7 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
         dateFormat: "Y-m-d", // Format: Day-Month-Year
         defaultDate: "today", // Default to today's date
         minDate: "today", // Prevent selecting past dates
-        disable: ["2025-01-01"], // Example: Disable specific dates
+        disable: [
+            "2026-02-14",
+            "2026-02-15",
+            "2026-03-07",
+            {
+                from: "2026-04-03",
+                to: "2026-04-10"
+            }
+        ],
         locale: {
             firstDayOfWeek: 1 // Set Monday as the first day of the week
         },
