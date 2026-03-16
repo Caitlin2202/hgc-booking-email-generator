@@ -51,13 +51,21 @@
   {
     "year": 2026,
     "termName": "Spring-Summer 2026",
-    "startDate": "11/04/2026",
-    "endDate": "05/07/2026",
+    "startDate": "2026-04-11",
+    "endDate": "2026-07-05",
     "offDates": [
-      "22/05/2026-25/05/2026",
-      "20/06/2026-21/06/2026"
+      {
+        "from": "2026-05-22",
+        "to": "2026-05-25",
+        "reason": "Club Display 2026"
+      },
+      {
+        "from": "2026-06-20",
+        "to": "2026-06-21",
+        "reason": "External club event"
+      }
     ],
-    "active": false,
+    "active": true,
     "archive": false
   },
   {

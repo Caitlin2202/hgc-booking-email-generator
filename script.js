@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideAllFields();
 
         // Ensure class filters stay visible for the appropriate templates
-        if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking-new-member' || selectedTemplate === 'new-booking-current-member' || selectedTemplate === 'auto-enrol' || selectedTemplate === 'changing-class') {
+        if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking' || selectedTemplate === 'auto-enrol' || selectedTemplate === 'changing-class') {
             showFields(classFiltersContainer);  // Keep class filters visible when needed
         }
 
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Show the relevant form fields based on the template selected
                     if (selectedTemplate === 'general-email') {
                         showFields(generalEmailsForm);
-                    } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking-new-member' || selectedTemplate === 'new-booking-current-member' || selectedTemplate === 'auto-enrol') {
+                    } else if (selectedTemplate === 'taster' || selectedTemplate === 'new-booking' || selectedTemplate === 'auto-enrol') {
                         showFields(recBookingEmailsForm, newBookingsForm, termSelectionForm);
                     } else if (selectedTemplate === 'changing-class') {
                         showFields(recBookingEmailsForm, changingClassForm);
@@ -568,37 +568,69 @@ document.addEventListener('DOMContentLoaded', () => {
         )
     })
 
-    // Combined function to format both date strings (DD/MM/YYYY) and ISO date strings (YYYY-MM-DD)
-    function formatDate(dateStr) {
-        // Return "tbc" directly if that's what the data says
-        if (typeof dateStr === 'string' && dateStr.trim().toLowerCase() === 'tbc') {
+    /**
+     * Format date or off-date object, optionally including reason
+     */
+    function formatDate(input, format = "short", includeReason = false) {
+
+        const optionsLong = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+        
+        const parseDate = (dateStr) => {
+            if (!dateStr) return null;
+
+            if (dateStr.includes('/')) {
+                const [day, month, year] = dateStr.split('/');
+                return new Date(`${year}-${month}-${day}`);
+            }
+
+            if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+                const date = new Date(dateStr);
+                if (isNaN(date)) return null;
+                return date;
+            }
+
+            return null;
+        };
+
+        // "tbc"
+        if (typeof input === 'string' && input.trim().toLowerCase() === 'tbc') {
             return 'tbc';
         }
 
-        // If the date is in DD/MM/YYYY format (like "12/08/2024")
-        if (dateStr.includes('/')) {
-            const [day, month, year] = dateStr.split('/');
-            return `${day}/${month}/${year}`;
+        // Single date string
+        if (typeof input === 'string') {
+            const date = parseDate(input);
+            if (!date) return "Invalid date";
+
+            const formatted = format === "long"
+                ? date.toLocaleDateString(undefined, optionsLong)
+                : `${String(date.getDate()).padStart(2,'0')}/${String(date.getMonth()+1).padStart(2,'0')}/${date.getFullYear()}`;
+
+            return formatted;
         }
 
-        // If the date is in ISO format (like "2024-12-08")
-        else if (typeof dateStr === 'string' && dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
-            const date = new Date(dateStr); // Convert string to Date object
-            if (isNaN(date)) {
-                console.error("Invalid ISO date string:", dateStr);
+        // Object: { date, reason } OR { from, to, reason }
+        if (typeof input === 'object') {
+            let formattedDate;
+
+            if (input.date) {
+                formattedDate = formatDate(input.date, format);
+            } else if (input.from) {
+                const fromFormatted = formatDate(input.from, format);
+                const toFormatted = input.to ? formatDate(input.to, format) : null;
+                formattedDate = toFormatted ? `${fromFormatted} - ${toFormatted}` : fromFormatted;
+            } else {
                 return "Invalid date";
             }
 
-            // Extract day, month, and year
-            const day = String(date.getDate()).padStart(2, '0');
-            const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-            const year = date.getFullYear();
+            if (includeReason && input.reason) {
+                return `${formattedDate} (${input.reason})`;
+            }
 
-            return `${day}/${month}/${year}`;
+            return formattedDate;
         }
 
-        console.error("Invalid date format:", dateStr);
-        return "Invalid date"; // Return a default message for invalid date formats
+        return "Invalid date";
     }
 
     fetch('classTimetable.json')
@@ -715,9 +747,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (selectedTerm) {
                         placeholderTermData = {
                             termName: selectedTerm.termName || '',
-                            termStartDate: selectedTerm.startDate || '',
-                            termEndDate: selectedTerm.endDate || '',
-                            offDates: selectedTerm.offDates || '',
+                            termStartDate: formatDate(selectedTerm.startDate, "long") || '',
+                            termEndDate: formatDate(selectedTerm.endDate, "long") || '',
+                            offDates: (selectedTerm.offDates || []).map(d => formatDate(d, "long", true)),
                         };
                         updateEmailTemplate(
                             placeholderGeneralMessageTitle,
