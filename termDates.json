@@ -41,9 +41,20 @@
     "startDate": "05/01/2026",
     "endDate": "02/04/2026",
     "offDates": [
-      "14/02/2026-15/02/2026",
-      "07/03/2026",
-      "03/04/2026-10/04/2026"
+      {
+        "from": "2026-02-14",
+        "to": "2026-02-15",
+        "reason": "Early Bird WAG Competition"
+      },
+      {
+        "date": "2026-03-07",
+        "reason": "Early Bird Recreational Competition"
+      },
+      {
+        "from": "2026-04-03",
+        "to": "2026-04-10",
+        "reason": "Spring Break"
+      }
     ],
     "active": true,
     "archive": false
